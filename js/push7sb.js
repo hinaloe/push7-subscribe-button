@@ -38,13 +38,16 @@ var p7sb;
                 if (appid.length <= 0)
                     return;
                 var url = 'https://api.push7.jp/api/v1/:app_id/head'.replace(':app_id', appid);
-                $.ajax({
+                $.when($.ajax({
                     url: url,
                     dataType: 'json'
-                }).done(function (res) {
+                }).then(function (res) {
+                    if (res.error) {
+                        return $.Deferred().reject(res.error);
+                    }
                     element.href = "https://" + (res.alias ? res.alias : res.domain);
                     Push7SubscribeButton.addCount(element, res.subscribers);
-                });
+                })).fail(function () { return element.parentNode.removeChild(element); });
             });
         };
         /**

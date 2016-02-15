@@ -19,6 +19,7 @@ module p7sb {
 		name: string,
 		subscribers: number,
 		url: string
+		error?: string // Known API Bug (2016.02.15)
 	}
 
 	/**
@@ -61,14 +62,18 @@ module p7sb {
 				}
 				if (appid.length <= 0)return;
 				const url = 'https://api.push7.jp/api/v1/:app_id/head'.replace(':app_id', appid);
-				$.ajax({
+				$.when($.ajax({
 					url,
 					dataType: 'json'
 
-				}).done((res:Push7_HEAD)=> {
+				}).then((res:Push7_HEAD)=> {
+					if (res.error) {
+						return $.Deferred().reject(res.error);
+
+					}
 					element.href = "https://" + (res.alias ? res.alias : res.domain);
 					Push7SubscribeButton.addCount(element, res.subscribers);
-				});
+				})).fail(()=>element.parentNode.removeChild(element));
 
 			})
 		}

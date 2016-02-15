@@ -14,6 +14,7 @@ declare module p7sb {
         name: string;
         subscribers: number;
         url: string;
+        error?: string;
     }
     /**
      * self-update push7-jetpack-button count & url
