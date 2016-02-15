@@ -4,9 +4,9 @@
  * Plugin Name: Push7 Subscribe Button
  * Version: 0.1-alpha
  * Description: Easy setting Push7 subscribe button
- * Author: hina
+ * Author: hinaloe
  * Author URI: https://hinaloe.net/
- * Plugin URI: PLUGIN SITE HERE
+ * Plugin URI: https://hinaloe.net/portfolio/push7-subscribe-button
  * Text Domain: push7-subscribe-button
  * Domain Path: /languages
  * @package Push7 Subscribe button
@@ -17,6 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Push7_Subscribe_Button {
+
+	const APP_ID_PATTERN = '[0-9a-f]{32}';
+	const APP_ID_PATTERN_PREG = '/\A' . self::APP_ID_PATTERN . '\z/';
 
 	/**
 	 * @return Push7_Subscribe_Button

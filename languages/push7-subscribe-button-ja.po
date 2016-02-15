@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Push7 Subscribe Button 0.1-alpha\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/push7-subscribe-"
 "button\n"
-"POT-Creation-Date: 2016-02-15 10:13+0900\n"
-"PO-Revision-Date: 2016-02-15 10:13+0900\n"
+"POT-Creation-Date: 2016-02-15 22:07+0900\n"
+"PO-Revision-Date: 2016-02-15 22:07+0900\n"
 "Last-Translator: Hinaloe <hina@hinaloe.net>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -31,21 +31,49 @@ msgstr "Push7 でプッシュ通知を購読する"
 msgid "Push7 Subscribe Button"
 msgstr "Push7 Subscribe Button"
 
-#: inc/class.widget.php:16
+#: inc/class.widget.php:24
 msgid "Show push7 subscribe button."
 msgstr "Push7 の通知ボタンを表示します."
 
+#: inc/class.widget.php:28
+msgid "Count on right"
+msgstr "右にカウント"
+
+#: inc/class.widget.php:29
+msgid "Vertical"
+msgstr "縦長"
+
+#: inc/class.widget.php:30
+msgid "No count"
+msgstr "カウント無し"
+
+#: inc/class.widget.php:63
+msgid "Subscribe Push Notification"
+msgstr "プッシュ通知を購読"
+
+#: inc/class.widget.php:70
+msgid "Title (Option):"
+msgstr "タイトル (オプション):"
+
+#: inc/class.widget.php:78
+msgid "Mode:"
+msgstr "モード:"
+
+#: inc/class.widget.php:92
+msgid "APPID (Option):"
+msgstr "APPID (オプション):"
+
 #. Plugin URI of the plugin/theme
-msgid "PLUGIN SITE HERE"
-msgstr ""
+msgid "https://hinaloe.net/portfolio/push7-subscribe-button"
+msgstr "https://hinaloe.net/portfolio/push7-subscribe-button"
 
 #. Description of the plugin/theme
 msgid "Easy setting Push7 subscribe button"
 msgstr "Push7 の購読ボタンを簡単に設置"
 
 #. Author of the plugin/theme
-msgid "hina"
-msgstr ""
+msgid "hinaloe"
+msgstr "hinaloe"
 
 #. Author URI of the plugin/theme
 msgid "https://hinaloe.net/"
@@ -61,6 +89,3 @@ msgctxt "share to"
 msgid "Subscribe"
 msgstr "購読する"
 
-#~ msgctxt "as sharing source"
-#~ msgid "Push7"
-#~ msgstr "Push7"

@@ -22,7 +22,7 @@ This plugin only provide Subscribe button interface.
 # Feature #
 
 - put official button everywhare with shortcode
-- Various types of announcement under article
+- Various types of announcement under article (developing)
 - Add official or unified button into Jetpack Share Buttons(Shardaddy).
 - Use App ID set by Official Plugin, or your custom APP ID
 
