@@ -6,11 +6,13 @@
 
 module p7sb {
 
+
+
 	/**
 	 * Push7 HEAD API Response
 	 *
 	 */
-	declare interface Push7_HEAD {
+	export declare interface Push7_HEAD {
 		alias: string,
 		domain: string,
 		icon: string,
