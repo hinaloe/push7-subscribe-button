@@ -37,7 +37,7 @@ var p7sb;
                 }
                 if (appid.length <= 0)
                     return;
-                var url = 'https://dashboard.push7.jp/api/v1/:app_id/head'.replace(':app_id', appid);
+                var url = 'https://api.push7.jp/api/v1/:app_id/head'.replace(':app_id', appid);
                 $.ajax({
                     url: url,
                     dataType: 'json'

@@ -60,7 +60,7 @@ module p7sb {
 					appid = appid.substr(0, appid.indexOf('&'));
 				}
 				if (appid.length <= 0)return;
-				const url = 'https://dashboard.push7.jp/api/v1/:app_id/head'.replace(':app_id', appid);
+				const url = 'https://api.push7.jp/api/v1/:app_id/head'.replace(':app_id', appid);
 				$.ajax({
 					url,
 					dataType: 'json'
