@@ -12,10 +12,9 @@ var p7sb;
     "use strict";
     var Push7SubscribeButton = (function () {
         /**
-         *
-         * @param jq
+         * Push7SubscribeButton constructor
          */
-        function Push7SubscribeButton(jq) {
+        function Push7SubscribeButton() {
             $(document.body).on('post-load', this.onLoadInfinityScroll);
             p7sb.update = this.updateCount;
             this.updateCount();
@@ -24,7 +23,6 @@ var p7sb;
          * Update Button Count & URL
          */
         Push7SubscribeButton.prototype.updateCount = function () {
-            var _this = this;
             var $nodes = $('a.share-push7');
             $nodes.each(function (index, element) {
                 if (element.dataset['loaded'])
@@ -45,7 +43,7 @@ var p7sb;
                     dataType: 'json'
                 }).done(function (res) {
                     element.href = "https://" + (res.alias ? res.alias : res.domain);
-                    _this.addCount(element, res.subscribers);
+                    Push7SubscribeButton.addCount(element, res.subscribers);
                 });
             });
         };
@@ -54,7 +52,7 @@ var p7sb;
          * @param element parent element
          * @param count
          */
-        Push7SubscribeButton.prototype.addCount = function (element, count) {
+        Push7SubscribeButton.addCount = function (element, count) {
             var c = document.createElement('span');
             c.className = 'share-count';
             c.textContent = Push7SubscribeButton.format_count(count);
@@ -74,5 +72,5 @@ var p7sb;
         };
         return Push7SubscribeButton;
     })();
-    jQuery(function ($) { return new Push7SubscribeButton($); });
+    jQuery(function () { return new Push7SubscribeButton(); });
 })(p7sb || (p7sb = {}));

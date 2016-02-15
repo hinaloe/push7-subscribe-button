@@ -35,10 +35,9 @@ module p7sb {
 	class Push7SubscribeButton {
 
 		/**
-		 *
-		 * @param jq
-         */
-		constructor(jq:JQueryStatic) {
+		 * Push7SubscribeButton constructor
+		 */
+		constructor() {
 			$(document.body).on('post-load', this.onLoadInfinityScroll);
 			p7sb.update = this.updateCount;
 			this.updateCount();
@@ -68,7 +67,7 @@ module p7sb {
 
 				}).done((res:Push7_HEAD)=> {
 					element.href = "https://" + (res.alias ? res.alias : res.domain);
-					this.addCount(element, res.subscribers);
+					Push7SubscribeButton.addCount(element, res.subscribers);
 				});
 
 			})
@@ -79,7 +78,7 @@ module p7sb {
 		 * @param element parent element
          * @param count
          */
-		private addCount(element:Element, count:number) {
+		private static addCount(element:Element, count:number) {
 			const c = document.createElement('span');
 			c.className = 'share-count';
 			c.textContent = Push7SubscribeButton.format_count(count);
@@ -106,6 +105,6 @@ module p7sb {
 
 	}
 
-	jQuery(($)=> new Push7SubscribeButton($));
+	jQuery(()=> new Push7SubscribeButton());
 
 }
