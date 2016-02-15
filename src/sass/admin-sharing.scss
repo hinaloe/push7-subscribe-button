@@ -1,0 +1,29 @@
+
+.preview {
+  &-push7 .option-smart-on {
+	background: url(../img/smart-push7.png) no-repeat top left;
+	background-size: 84px 23px;
+	width: 84px;
+	height: 23px;
+  }
+}
+
+li.service.share-push7 span:before,
+.sd-social-icon .sd-content ul li.share-push7 a:before,
+.sd-social-text .sd-content ul li.share-push7 a:before,
+.sd-content ul li.share-push7 div.option.option-smart-off a:before,
+.sd-social-icon-text .sd-content li.share-push7 a:before {
+  content: " ";
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBzdHlsZT0iIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTMuNDYgMjE0LjMyIj48ZGVmcz48c3R5bGU+LmNscy0xIHtmaWxsOiAjNTU1O308L3N0eWxlPjwvZGVmcz48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNjQuNjEgMCAwIDEyMS4zNCA2Ni4xOCAxMjEuMzQgNDAuOTcgMjE0LjMyIDExMy40NiA4Ni42NyA0NC4xMiA4Ni42NyA2NC42MSAwIi8+PC9zdmc+);
+  height: 16px;
+  width: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.sd-social-icon .sd-content ul li[class*='share-'] a.share-push7.sd-button.share-icon.no-text {
+  background: #EEAC00;
+}
+
+.sd-social-icon .sd-content ul li.share-push7 a.share-push7.sd-button.share-icon.no-text:before{
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBzdHlsZT0iIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTMuNDYgMjE0LjMyIj48ZGVmcz48c3R5bGU+LmNscy0xIHtmaWxsOiAjZmZmO308L3N0eWxlPjwvZGVmcz48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNjQuNjEgMCAwIDEyMS4zNCA2Ni4xOCAxMjEuMzQgNDAuOTcgMjE0LjMyIDExMy40NiA4Ni42NyA0NC4xMiA4Ni42NyA2NC42MSAwIi8+PC9zdmc+);
+}

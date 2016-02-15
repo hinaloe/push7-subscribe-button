@@ -1,0 +1,15 @@
+node_modules/
+.gitignore
+.travis.yml
+Gruntfile.js
+package.json
+phpunit.xml.dist
+.git/
+tests/
+bin/
+.idea/
+gulpfile.js
+tsconfig.json
+typings.json
+typings/
+src/img
