@@ -81,7 +81,7 @@ class Push7_Subscribe_Button {
 	}
 
 	/**
-	 * @param $atts
+	 * @param array $atts
 	 *
 	 * @return string
 	 */
@@ -137,6 +137,11 @@ class Push7_Subscribe_Button {
 	}
 
 
+	/**
+	 * @param string $type
+	 *
+	 * @return string
+	 */
 	private static function format_official_button_type( $type ) {
 		switch ( $type ) {
 			case 'r':
@@ -155,6 +160,12 @@ class Push7_Subscribe_Button {
 
 	}
 
+	/**
+	 * @param string $app_id
+	 * @param string $type
+	 *
+	 * @return string
+	 */
 	public static function get_official_button( $app_id, $type = '' ) {
 		/**
 		 * Filter Push7 Official button
