@@ -13,3 +13,4 @@ tsconfig.json
 typings.json
 typings/
 src/img
+.DS_Store
