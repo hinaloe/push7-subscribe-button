@@ -20,6 +20,8 @@ class Push7_Subscribe_Button {
 
 	const APP_ID_PATTERN = '[0-9a-f]{32}';
 	const APP_ID_PATTERN_PREG = '/\A' . self::APP_ID_PATTERN . '\z/';
+	const PUSH7_APPNO_NAME = 'push7_appno';
+	const PLUGIN_PUSH7_APPNO_NAME = 'push7sb_appno';
 
 	/**
 	 * @return Push7_Subscribe_Button
@@ -115,7 +117,7 @@ class Push7_Subscribe_Button {
 	 * @return string
 	 */
 	public static function get_appid() {
-		return get_option( 'push7sb_appno', '' );
+		return get_option( self::PLUGIN_PUSH7_APPNO_NAME, '' );
 	}
 
 	/**
@@ -124,7 +126,7 @@ class Push7_Subscribe_Button {
 	public static function get_appid_inc_official() {
 		$app_id = self::get_appid();
 
-		return apply_filters( 'push7_sb_appid', $app_id ? $app_id : get_option( 'push7_appno', '' ) );
+		return apply_filters( 'push7_sb_appid', $app_id ? $app_id : get_option( self::PUSH7_APPNO_NAME, '' ) );
 	}
 
 	/**
