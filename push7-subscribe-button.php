@@ -62,6 +62,7 @@ class Push7_Subscribe_Button {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		wp_register_script( 'push7-subscribe-button', 'https://push.app.push7.jp/static/button/p7.js', array(), false, true );
 		wp_register_script( 'push7-custom-button', plugins_url( 'js/push7sb' . $suffix . '.js', __FILE__ ), array( 'jquery' ), false, true );
+		wp_register_style( 'push7-custom-button', plugins_url( 'css/front' . $suffix . '.css', __FILE__ ) );
 	}
 
 	public function register_widget() {
