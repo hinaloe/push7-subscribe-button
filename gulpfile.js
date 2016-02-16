@@ -45,4 +45,10 @@ g.task('clean', ()=>
 	])
 );
 
+g.task('watch', ()=> {
+		g.watch('./src/ts/**/*.ts', ['ts']);
+		g.watch('./src/sass/**/*.scss', ['sass']);
+	}
+);
+
 g.task('default', ['ts', 'sass', 'img'])
