@@ -68,7 +68,25 @@ class Share_Push7 extends Sharing_Source {
 		if ( $this->smart ) {
 			return Push7_Subscribe_Button::get_official_button( Push7_Subscribe_Button::get_appid_inc_official() );
 		} else {
-			return $this->get_link( 'about:blank', _x( 'Subscribe', 'share to', 'push7-subscribe-button' ), __( 'Click to subscribe push notification with Push7', 'push7-subscribe-button' ), 'appid=' . Push7_Subscribe_Button::get_appid_inc_official(), 'sharing-push7-' . $post->ID );
+			return $this->get_link(
+				'about:blank',
+				/**
+				 * Filter Push7 Share Button title text
+				 *
+				 * @param string $text
+				 */
+				apply_filters( 'push7_sb_share_title', _x( 'Subscribe', 'share to', 'push7-subscribe-button' ) ),
+				/**
+				 * Filter Push7 Share Button description
+				 *
+				 * @param string $description
+				 */
+				apply_filters( 'push7_sb_share_description', __( 'Click to subscribe push notification with Push7', 'push7-subscribe-button' ) ),
+				'appid=' . Push7_Subscribe_Button::get_appid_inc_official(), 'sharing-push7-' . $post->ID
+			);
+		}
+	}
+
 	public function display_header() {
 		if ( ! $this->smart ) {
 			wp_enqueue_style( 'push7-custom-button' );

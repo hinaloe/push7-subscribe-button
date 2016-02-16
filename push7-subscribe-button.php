@@ -124,7 +124,7 @@ class Push7_Subscribe_Button {
 	public static function get_appid_inc_official() {
 		$app_id = self::get_appid();
 
-		return $app_id ? $app_id : get_option( 'push7_appno', '' );
+		return apply_filters( 'push7_sb_appid', $app_id ? $app_id : get_option( 'push7_appno', '' ) );
 	}
 
 	/**
@@ -156,7 +156,14 @@ class Push7_Subscribe_Button {
 	}
 
 	public static function get_official_button( $app_id, $type = '' ) {
-		return sprintf( '<div class="p7-b" data-p7id="%s" data-p7c="%s"></div>', $app_id, self::format_official_button_type( $type ) );
+		/**
+		 * Filter Push7 Official button
+		 *
+		 * @param string $button button html to show
+		 * @param string $app_id AppId of Push7
+		 * @param string $type Button Type
+		 */
+		return apply_filters( 'push7_sb_official_button', sprintf( '<div class="p7-b" data-p7id="%s" data-p7c="%s"></div>', $app_id, self::format_official_button_type( $type ) ), $app_id, $type );
 	}
 }
 
