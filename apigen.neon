@@ -1,0 +1,21 @@
+source: ./
+
+destination: doc
+
+extensions: [php]
+
+exclude:
+	- doc/
+	- node_modules/
+	- apigen/
+	- bin/
+	- tests/
+
+charset: [UTF-8]
+
+php: false
+sourceCode: true
+tree: tree
+title: Push7 SubscribeButton
+
+templateConfig: apigen/theme-push7-sb/config.neon
