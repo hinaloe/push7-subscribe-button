@@ -22,6 +22,7 @@ class Push7_Subscribe_Button {
 	const APP_ID_PATTERN_PREG = '/\A[0-9a-f]{32}\z/';
 	const PUSH7_APPNO_NAME = 'push7_appno';
 	const PLUGIN_PUSH7_APPNO_NAME = 'push7sb_appno';
+	const MAIN_ENTRY = __FILE__;
 
 	/**
 	 * @return Push7_Subscribe_Button
