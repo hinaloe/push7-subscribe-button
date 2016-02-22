@@ -28,16 +28,20 @@ This plugin only provide Subscribe button interface.
 
 === Shortcode ===
 
-#### Basic usage
+= Basic usage =
 `[push7-sb]`
 
-#### Advanced Usage
+= Advanced Usage =
 `[push7-sb id="YOUR_CUSTOM_APPID" type="BUTTON_TYPE"]`
 
 Options:
 
 - `id`: Push7 AppId
 - `type`: Button type to show. `r`(Count in right),`t`(vertical balloon),`n`(No count). default is `n`
+
+----
+
+This plugin is developing on [GitHub](https://github.com/hinaloe/push7-subscribe-button/)
 
 == Installation ==
 
