@@ -49,7 +49,7 @@ g.task('clean', ()=>
 );
 
 g.task('clean:apigen', ()=>
-	del(['doc']));
+	del(['doc/**/*']));
 
 g.task('apigen:build', _=>
 	//execSync('apigen generate && cd apigen && php hook-docs.php', {stdio: [0, 1, 2]}));
