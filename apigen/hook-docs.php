@@ -162,8 +162,9 @@ class WC_HookFinder {
 									}
 									break;
 							}
-							if ( $token_type !== 'namespace' )
-							$token_type = false;
+							if ( $token_type !== 'namespace' ) {
+								$token_type = false;
+							}
 						}
 					} elseif ( $token_type === 'namespace' ) {
 						$token_type = false;
