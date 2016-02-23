@@ -43,10 +43,16 @@ class WC_HookFinder {
 	}
 
 	private static function get_hook_link( $hook, $details = array() ) {
-		if ( ! empty( $details['class'] ) ) {
-			$link = '/source-class-' . $details['class'] . '.html#' . $details['line'];
+		if ( ! empty( $details['namespace'] ) && ! empty( $details['class'] ) ) {
+			$namespace = '';
+			foreach ( $details['namespace'] as $ns ) {
+				$namespace .= $ns . '.';
+			}
+			$link = './source-class-' . $namespace . $details['class'] . '.html#' . $details['line'];
+		} elseif ( ! empty( $details['class'] ) ) {
+			$link = './source-class-' . $details['class'] . '.html#' . $details['line'];
 		} elseif ( ! empty( $details['function'] ) ) {
-			$link = '/source-function-' . $details['function'] . '.html#' . $details['line'];
+			$link = './source-function-' . $details['function'] . '.html#' . $details['line'];
 		} else {
 			$link = 'https://github.com/hinaloe/push7-subscribe-button/search?utf8=%E2%9C%93&q=' . $hook;
 		}
@@ -78,6 +84,7 @@ class WC_HookFinder {
 				$token_type         = false;
 				$current_class      = '';
 				$current_function   = '';
+				$current_namespace  = [ ];
 				if ( in_array( self::$current_file, $scanned ) ) {
 					continue;
 				}
@@ -88,6 +95,8 @@ class WC_HookFinder {
 							$token_type = 'class';
 						} elseif ( $token[0] == T_FUNCTION ) {
 							$token_type = 'function';
+						} elseif ( $token[0] == T_NAMESPACE ) {
+							$token_type = 'namespace';
 						} elseif ( $token[1] === 'do_action' ) {
 							$token_type = 'action';
 						} elseif ( $token[1] === 'apply_filters' ) {
@@ -99,6 +108,11 @@ class WC_HookFinder {
 									break;
 								case 'function' :
 									$current_function = $token[1];
+									break;
+								case 'namespace' :
+									if ( $token[0] == T_STRING ) {
+										$current_namespace[] = $token[1];
+									}
 									break;
 								case 'filter' :
 								case 'action' :
@@ -138,17 +152,21 @@ class WC_HookFinder {
 										self::$custom_hooks_found[ $hook ]['file'][] = self::$current_file;
 									} else {
 										self::$custom_hooks_found[ $hook ] = array(
-											'line'     => $token[2],
-											'class'    => $current_class,
-											'function' => $current_function,
-											'file'     => array( self::$current_file ),
-											'type'     => $token_type
+											'line'      => $token[2],
+											'class'     => $current_class,
+											'namespace' => $current_namespace,
+											'function'  => $current_function,
+											'file'      => array( self::$current_file ),
+											'type'      => $token_type,
 										);
 									}
 									break;
 							}
+							if ( $token_type !== 'namespace' )
 							$token_type = false;
 						}
+					} elseif ( $token_type === 'namespace' ) {
+						$token_type = false;
 					}
 				}
 			}
