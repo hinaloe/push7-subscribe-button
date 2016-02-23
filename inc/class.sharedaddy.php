@@ -11,13 +11,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_action( 'jetpack_modules_loaded', array( 'Push7SB_Jetpack', 'init' ), 11 );
 
-
+/**
+ * Class Push7SB_Jetpack
+ *
+ * Jetpack Integration
+ */
 class Push7SB_Jetpack {
 
 	/**
 	 * @var self
 	 */
-	static $instance;
+	private static $instance;
 
 
 	/**
@@ -29,11 +33,11 @@ class Push7SB_Jetpack {
 		}
 
 
-		if ( ! self::$instance ) {
-			self::$instance = new self;
+		if ( ! static::$instance ) {
+			static::$instance = new static;
 		}
 
-		return self::$instance;
+		return static::$instance;
 	}
 
 	/**

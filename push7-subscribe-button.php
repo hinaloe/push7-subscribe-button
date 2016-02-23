@@ -30,7 +30,7 @@ class Push7_Subscribe_Button {
 	public static function get_instance() {
 		static $instance;
 		if ( ! $instance instanceof Push7_Subscribe_Button ) {
-			$instance = new self;
+			$instance = new static;
 		}
 
 		return $instance;

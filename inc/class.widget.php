@@ -11,6 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Date: 2016/02/09
  * Time: 5:46
  */
+
+/**
+ * Push7 Subscribe Button Widget
+ */
 class Push7_Subscribe_Button_Widget extends WP_Widget {
 
 	/**
