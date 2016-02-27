@@ -28,5 +28,10 @@ li.service.share-push7 span:before,
   background-image: url(data:image/svg+xml;base64,PHN2ZyBzdHlsZT0iIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTMuNDYgMjE0LjMyIj48ZGVmcz48c3R5bGU+LmNscy0xIHtmaWxsOiAjZmZmO308L3N0eWxlPjwvZGVmcz48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNjQuNjEgMCAwIDEyMS4zNCA2Ni4xOCAxMjEuMzQgNDAuOTcgMjE0LjMyIDExMy40NiA4Ni42NyA0NC4xMiA4Ni42NyA2NC42MSAwIi8+PC9zdmc+);
 }
 
+.push7ssb-option{
+  .hide {
+	display: none;
+  }
 
-@import "components";
+  @import "components";
+}

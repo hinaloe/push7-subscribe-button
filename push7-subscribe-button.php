@@ -54,8 +54,10 @@ class Push7_Subscribe_Button {
 		add_action( 'init', array( $this, 'register_shortcodes' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
 		add_action( 'init', array( $this, 'load_textdomain' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-
+		add_action( 'init', array( $this, 'load_sbz' ) );
+//		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+//		add_action( 'admin_init', array( $this, 'admin_init' ) );
+		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 	}
 
 	/**
@@ -133,6 +135,18 @@ class Push7_Subscribe_Button {
 	public function admin_enqueue_scripts() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		wp_enqueue_style( 'push7-admin-sharing', plugins_url( 'css/admin-sharing' . $suffix . '.css', __FILE__ ) );
+	}
+
+	/*
+		public function admin_init() {
+			require_once dirname( __FILE__ ) . '/inc/admin/class.admin.php';
+			\Push7SubscribeButtoon\Admin\Admin::get_instance();
+		}*/
+
+	public function admin_menu() {
+		require_once dirname( __FILE__ ) . '/inc/admin/class.admin.php';
+		\Push7SubscribeButtoon\Admin\Admin::get_instance()->admin_menu();
+
 	}
 
 	public static function uninstall() {
