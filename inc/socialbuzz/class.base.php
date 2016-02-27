@@ -47,6 +47,10 @@ abstract class Base {
 			return $content;
 		}
 
+		if ( ! in_array( get_post_type(), \Push7_Subscribe_Button_Options::get_options()->social_buzz_posttype ) ) {
+			return $content;
+		}
+
 		if ( is_admin() && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
 			return $content;
 		}

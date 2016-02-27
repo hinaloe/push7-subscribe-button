@@ -78,6 +78,33 @@ class Push7_Subscribe_Button {
 		load_plugin_textdomain( 'push7-subscribe-button', null, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
+	public function load_sbz() {
+		$option = Push7_Subscribe_Button_Options::get_options();
+		if ( $option->enable_social_buzz ) {
+			$sbztypes = self::get_sbztypes();
+			$sm       = $sbztypes[ $option->social_buzz_mode ];
+			if ( ! file_exists( $sm['file'] ) ) {
+				trigger_error( $sm['file'] . ' is not found at ' . __FILE__ . ' on line ' . __LINE__ );
+
+				return;
+			}
+			require_once $sm['file'];
+			if ( ! class_exists( $sm['class'] ) ) {
+				trigger_error( 'Class ' . $sm['class'] . ' is not found at ' . __FILE__ . ' on line ' . __LINE__ );
+
+				return;
+
+			}
+			if ( ! is_callable( array( $sm['class'], 'get_instance' ), null, $name ) ) {
+				trigger_error( $name . ' is not callable at ' . __FILE__ . ' on line ' . __LINE__ );
+
+				return;
+			}
+			call_user_func( array( $sm['class'], 'get_instance' ) );
+
+		}
+
+	}
 
 	/**
 	 * @return array
