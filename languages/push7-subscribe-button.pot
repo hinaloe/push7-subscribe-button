@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Push7 Subscribe Button 0.1-alpha\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/push7-subscribe-button\n"
-"POT-Creation-Date: 2016-02-23 21:49:47+00:00\n"
+"POT-Creation-Date: 2016-02-27 22:45:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,12 +25,59 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: inc/class.sharedaddy.service.php:84
-msgid "Click to subscribe push notification with Push7"
-msgstr ""
-
 #. Plugin Name of the plugin/theme
 msgid "Push7 Subscribe Button"
+msgstr ""
+
+#: inc/admin/class.admin.php:45
+msgid "Push7 Large Button"
+msgstr ""
+
+#: inc/admin/class.admin.php:49
+msgid "Alt Push7 AppNo (Option)"
+msgstr ""
+
+#: inc/admin/class.admin.php:57
+msgid "Large link bellow post"
+msgstr ""
+
+#: inc/admin/class.admin.php:73
+msgid "PostTypes to show it"
+msgstr ""
+
+#: inc/admin/class.admin.php:81
+msgid "Message"
+msgstr ""
+
+#: inc/admin/class.admin.php:93
+msgid "Push7 Buttons"
+msgstr ""
+
+#: inc/admin/class.admin.php:138
+msgid "Push7 Subscribe Button Settings"
+msgstr ""
+
+#: inc/admin/class.admin.php:165
+msgid ""
+"Input if you want use subscribe button without Official Plugin, or another "
+"APPNO. <br>If, this value is empty, Official plugin setting will use for "
+"show button."
+msgstr ""
+
+#: inc/admin/class.admin.php:172
+msgid "Insert large Subscribe button bellow posts. (It likes Social Buzz)"
+msgstr ""
+
+#: inc/admin/class.admin.php:174
+msgid "It is look like SNS button of Viral Media. You can customize the following."
+msgstr ""
+
+#: inc/class.options.php:83
+msgid "Subscribe Latest Update with Push Notification!"
+msgstr ""
+
+#: inc/class.sharedaddy.service.php:84
+msgid "Click to subscribe push notification with Push7"
 msgstr ""
 
 #: inc/class.widget.php:33
@@ -49,19 +96,19 @@ msgstr ""
 msgid "No count"
 msgstr ""
 
-#: inc/class.widget.php:72
+#: inc/class.widget.php:71
 msgid "Subscribe Push Notification"
 msgstr ""
 
-#: inc/class.widget.php:79
+#: inc/class.widget.php:78
 msgid "Title (Option):"
 msgstr ""
 
-#: inc/class.widget.php:87
+#: inc/class.widget.php:86
 msgid "Mode:"
 msgstr ""
 
-#: inc/class.widget.php:101
+#: inc/class.widget.php:100
 msgid "APPID (Option):"
 msgstr ""
 
@@ -69,8 +116,12 @@ msgstr ""
 msgid "%1$s Push Notification"
 msgstr ""
 
-#: inc/socialbuzz/class.withthumb.php:39
-msgid "Subscribe Latest Update with Push Notification!"
+#: push7-subscribe-button.php:117
+msgid "Simple"
+msgstr ""
+
+#: push7-subscribe-button.php:122
+msgid "With Thumbnail or Site icon"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -87,6 +138,11 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://hinaloe.net/"
+msgstr ""
+
+#: inc/admin/class.admin.php:65
+msgctxt "SocialBuzz-Select"
+msgid "Type"
 msgstr ""
 
 #: inc/class.sharedaddy.service.php:50

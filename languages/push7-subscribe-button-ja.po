@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Push7 Subscribe Button 0.1-alpha\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/push7-subscribe-"
 "button\n"
-"POT-Creation-Date: 2016-02-24 06:49+0900\n"
-"PO-Revision-Date: 2016-02-24 06:58+0900\n"
+"POT-Creation-Date: 2016-02-28 06:58+0900\n"
+"PO-Revision-Date: 2016-02-28 06:59+0900\n"
 "Last-Translator: Hinaloe <hina@hinaloe.net>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -23,13 +23,65 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: inc/class.sharedaddy.service.php:84
-msgid "Click to subscribe push notification with Push7"
-msgstr "Push7 でプッシュ通知を購読する"
-
 #. Plugin Name of the plugin/theme
 msgid "Push7 Subscribe Button"
 msgstr "Push7 Subscribe Button"
+
+#: inc/admin/class.admin.php:45
+msgid "Push7 Large Button"
+msgstr "Push7 大きなボタン"
+
+#: inc/admin/class.admin.php:49
+msgid "Alt Push7 AppNo (Option)"
+msgstr "Push7 の AppNo (オプション)"
+
+#: inc/admin/class.admin.php:57
+msgid "Large link bellow post"
+msgstr "大きな購読ボタン"
+
+#: inc/admin/class.admin.php:73
+msgid "PostTypes to show it"
+msgstr "挿入する投稿タイプ"
+
+#: inc/admin/class.admin.php:81
+msgid "Message"
+msgstr "メッセージ"
+
+#: inc/admin/class.admin.php:93
+msgid "Push7 Buttons"
+msgstr "Push7 ボタン"
+
+#: inc/admin/class.admin.php:138
+msgid "Push7 Subscribe Button Settings"
+msgstr "Push7 Subscribe Button 設定"
+
+#: inc/admin/class.admin.php:165
+msgid ""
+"Input if you want use subscribe button without Official Plugin, or another "
+"APPNO. <br>If, this value is empty, Official plugin setting will use for "
+"show button."
+msgstr ""
+"公式プラグインを使わずに購読ボタンを設置する場合や、公式プラグインと異なる "
+"APPNO で購読ボタンを設置する場合のみ入力してください。この欄が空の場合、公式"
+"プラグインの設定が利用されます。"
+
+#: inc/admin/class.admin.php:172
+msgid "Insert large Subscribe button bellow posts. (It likes Social Buzz)"
+msgstr "大きな購読ボタンを投稿の後に挿入する"
+
+#: inc/admin/class.admin.php:174
+msgid ""
+"It is look like SNS button of Viral Media. You can customize the following."
+msgstr ""
+"バイラルメディアの SNS ボタンのようなものです。以下でカスタマイズできます。"
+
+#: inc/class.options.php:83
+msgid "Subscribe Latest Update with Push Notification!"
+msgstr "最新の更新を<br>プッシュ通知で購読しよう"
+
+#: inc/class.sharedaddy.service.php:84
+msgid "Click to subscribe push notification with Push7"
+msgstr "Push7 でプッシュ通知を購読する"
 
 #: inc/class.widget.php:33
 msgid "Show push7 subscribe button."
@@ -47,19 +99,19 @@ msgstr "縦長"
 msgid "No count"
 msgstr "カウント無し"
 
-#: inc/class.widget.php:72
+#: inc/class.widget.php:71
 msgid "Subscribe Push Notification"
 msgstr "プッシュ通知を購読"
 
-#: inc/class.widget.php:79
+#: inc/class.widget.php:78
 msgid "Title (Option):"
 msgstr "タイトル (オプション):"
 
-#: inc/class.widget.php:87
+#: inc/class.widget.php:86
 msgid "Mode:"
 msgstr "モード:"
 
-#: inc/class.widget.php:101
+#: inc/class.widget.php:100
 msgid "APPID (Option):"
 msgstr "APPID (オプション):"
 
@@ -67,9 +119,13 @@ msgstr "APPID (オプション):"
 msgid "%1$s Push Notification"
 msgstr "プッシュ通知を %1$s"
 
-#: inc/socialbuzz/class.withthumb.php:39
-msgid "Subscribe Latest Update with Push Notification!"
-msgstr "最新の更新を<br>プッシュ通知で購読しよう"
+#: push7-subscribe-button.php:98
+msgid "Simple"
+msgstr "シンプル"
+
+#: push7-subscribe-button.php:103
+msgid "With Thumbnail or Site icon"
+msgstr "アイキャッチ/サイトアイコンを表示"
 
 #. Plugin URI of the plugin/theme
 msgid "https://hinaloe.net/portfolio/push7-subscribe-button"
@@ -86,6 +142,11 @@ msgstr "hinaloe"
 #. Author URI of the plugin/theme
 msgid "https://hinaloe.net/"
 msgstr "https://hinaloe.net/"
+
+#: inc/admin/class.admin.php:65
+msgctxt "SocialBuzz-Select"
+msgid "Type"
+msgstr "モード"
 
 #: inc/class.sharedaddy.service.php:50
 msgctxt "as sharing source"
