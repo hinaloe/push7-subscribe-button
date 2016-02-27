@@ -135,6 +135,11 @@ class Push7_Subscribe_Button {
 		wp_enqueue_style( 'push7-admin-sharing', plugins_url( 'css/admin-sharing' . $suffix . '.css', __FILE__ ) );
 	}
 
+	public static function uninstall() {
+		// remove all settings of this plugin (general settings)
+		delete_option( self::PLUGIN_OPTIONS );
+	}
+
 	/**
 	 * @return string
 	 */
@@ -201,6 +206,8 @@ class Push7_Subscribe_Button {
 		return apply_filters( 'push7_sb_official_button', sprintf( '<div class="p7-b" data-p7id="%s" data-p7c="%s"></div>', $app_id, self::format_official_button_type( $type ) ), $app_id, $type );
 	}
 }
+
+register_uninstall_hook( __FILE__, array( 'Push7_Subscribe_Button', 'uninstall' ) );
 
 add_action( 'plugins_loaded', array( 'Push7_Subscribe_Button', 'get_instance' ) );
 require_once dirname( __FILE__ ) . '/inc/class.widget.php';
