@@ -36,7 +36,7 @@ class SocialWithThumb extends Base {
 		return sprintf( '<div class="push7-sb-sbz-with-thumb" id="push7-sb-sbz"><div class="push7-sb-sbz-with-thumb-thumbnail"></div><div class="push7-sb-sbz-with-thumb-subscribe">%s</div></div>',
 			sprintf(
 				'<p>%s</p><div class="push7ssb-subscribe">%s</div>'
-				, __( 'Subscribe Latest Update with Push Notification!', 'push7-subscribe-button' ),
+				, \Push7_Subscribe_Button_Options::get_options()->social_buzz_message,
 				\Push7_Subscribe_Button::get_official_button( \Push7_Subscribe_Button::get_appid_inc_official(), 'r' )
 			)
 		);

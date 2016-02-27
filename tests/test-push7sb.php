@@ -12,20 +12,23 @@ class Push7SBTest extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 		update_option( self::OFFICIAL_OPTION_APPID, self::OFFICIAL_APPID );
-		update_option( self::OUR_OPTION_APHID, self::OUR_APPID );
+		update_option( Push7_Subscribe_Button::PLUGIN_OPTIONS, Push7_Subscribe_Button_Options::create_options( array(
+			'appid' => self::OUR_APPID,
+		) ), true );
+		Push7_Subscribe_Button_Options::invalidate_options();
 
 	}
 
 	public function test_default_option() {
 		$this->assertSame( Push7_Subscribe_Button::get_appid_inc_official(), self::OUR_APPID );
+		$this->assertSame( Push7_Subscribe_Button::get_appid(), self::OUR_APPID );
 	}
 
 	public function test_official_plugin_option_should_be_able_to_use() {
-		$our_appid = get_option( self::OUR_OPTION_APHID );
-		$this->assertSame( $our_appid, self::OUR_APPID );
-		$this->assertTrue( delete_option( self::OUR_OPTION_APHID ) );
+		$option = get_option( Push7_Subscribe_Button::PLUGIN_OPTIONS );
+		$this->assertSame( $option->appid, self::OUR_APPID );
+		delete_option( Push7_Subscribe_Button::PLUGIN_OPTIONS );
 		$this->assertSame( Push7_Subscribe_Button::get_appid_inc_official(), self::OFFICIAL_APPID );
-		$this->assertTrue( update_option( self::OUR_OPTION_APHID, $our_appid ) );
 
 	}
 

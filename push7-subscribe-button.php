@@ -21,7 +21,7 @@ class Push7_Subscribe_Button {
 	const APP_ID_PATTERN = '[0-9a-f]{32}';
 	const APP_ID_PATTERN_PREG = '/\A[0-9a-f]{32}\z/';
 	const PUSH7_APPNO_NAME = 'push7_appno';
-	const PLUGIN_PUSH7_APPNO_NAME = 'push7sb_appno';
+	const PLUGIN_OPTIONS = 'push7sb_option';
 	const MAIN_ENTRY = __FILE__;
 
 	/**
@@ -76,6 +76,27 @@ class Push7_Subscribe_Button {
 		load_plugin_textdomain( 'push7-subscribe-button', null, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
+
+	/**
+	 * @return array
+	 */
+	public static function get_sbztypes() {
+		$modes = array(
+			'simple'    => array(
+				'file'  => dirname( __FILE__ ) . '/inc/socialbuzz/class.simple.php',
+				'class' => '\Push7SubscribeButtoon\SocialBuzz\SocialSimple',
+				'name'  => __( 'Simple', 'push7-subscribe-button' ),
+			),
+			'withthumb' => array(
+				'file'  => dirname( __FILE__ ) . '/inc/socialbuzz/class.withthumb.php',
+				'class' => '\Push7SubscribeButtoon\SocialBuzz\SocialWithThumb',
+				'name'  => __( 'With Thumbnail or Site icon', 'push7-subscribe-button' ),
+			),
+		);
+
+		return apply_filters( 'push7_sb_socialbuzz_types', $modes );
+	}
+
 	/**
 	 * Register Shortcode
 	 */
@@ -118,7 +139,7 @@ class Push7_Subscribe_Button {
 	 * @return string
 	 */
 	public static function get_appid() {
-		return get_option( self::PLUGIN_PUSH7_APPNO_NAME, '' );
+		return Push7_Subscribe_Button_Options::get_options()->appid;
 	}
 
 	/**
@@ -183,3 +204,4 @@ class Push7_Subscribe_Button {
 
 add_action( 'plugins_loaded', array( 'Push7_Subscribe_Button', 'get_instance' ) );
 require_once dirname( __FILE__ ) . '/inc/class.widget.php';
+require_once dirname( __FILE__ ) . '/inc/class.options.php';
