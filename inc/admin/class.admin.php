@@ -34,6 +34,10 @@ final class Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'init' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( \Push7_Subscribe_Button::MAIN_ENTRY ), array(
+			$this,
+			'settings_link',
+		) );
 	}
 
 	public function init() {
@@ -122,6 +126,13 @@ final class Admin {
 			wp_enqueue_script( 'push7-ssb-admin' );
 		}
 
+	}
+
+	public function settings_link( $actions ) {
+		$settings_link = sprintf( '<a href="%s">%s</a>', esc_url( get_admin_url( null, 'options-general.php?page=push7-ssb' ) ), __( 'Settings', 'push7-subscribe-button' ) );
+		array_unshift( $actions, $settings_link );
+
+		return $actions;
 	}
 
 	public function admin_view() {
