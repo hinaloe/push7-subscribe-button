@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Push7_Subscribe_Button_Options class for load/gen plugin settings
+ *
+ * @package Push7_Subscribe_Button
+ * @since 0.0.1-dev
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -10,35 +17,62 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Date: 2016/02/27
  * Time: 15:40
  */
+
+/**
+ * Class Push7_Subscribe_Button_Options
+ *
+ * @property-read string $appid Push7 APPNO
+ * @property-read bool $enable_social_buzz Is enable Social-buzz module
+ * @property-read string $social_buzz_mode Social Buzz Mode slug
+ * @property-read string $social_buzz_message Message of Social-buzz
+ * @property-read array $social_buzz_posttype posttype names for use social-buzz module
+ *
+ * @since 0.0.1-dev
+ *
+ */
 final class Push7_Subscribe_Button_Options {
 
 	/**
+	 * Singleton Instance
+	 *
+	 * @since 0.0.1-dev
+	 * @access private
 	 * @var static
 	 */
 	private static $options = null;
 
 	/**
+	 * @since 0.0.1-dev
+	 * @access private
 	 * @var string
 	 */
 	private $appid;
 
 	/**
+	 * @since 0.0.1-dev
+	 * @access private
 	 * @var bool
 	 */
 	private $enable_social_buzz;
 
 	/**
+	 * @since 0.0.1-dev
+	 * @access private
 	 * @var string
 	 */
 	private $social_buzz_mode;
 
 	/**
+	 * @since 0.0.1-dev
+	 * @access private
 	 * @var string
 	 */
 	private $social_buzz_message;
 
 	/**
-	 * @var string[]
+	 * @since 0.0.1-dev
+	 * @access private
+	 * @var array {@type string}
 	 */
 	private $social_buzz_posttype;
 
@@ -60,6 +94,8 @@ final class Push7_Subscribe_Button_Options {
 	/**
 	 * Push7_Subscribe_Button_Options constructor.
 	 *
+	 * @since 0.0.1-dev
+	 *
 	 * @param array
 	 */
 	private function __construct( array $options ) {
@@ -73,6 +109,7 @@ final class Push7_Subscribe_Button_Options {
 
 
 	/**
+	 * @since 0.0.1-dev
 	 * @return array options
 	 */
 	private static function merege_option() {
@@ -88,6 +125,8 @@ final class Push7_Subscribe_Button_Options {
 		/**
 		 * Filter default options
 		 *
+		 * @since 0.0.1-dev
+		 *
 		 * @param $default string[]
 		 */
 		$default         = apply_filters( 'push7_sb_default_options', $default );
@@ -102,6 +141,7 @@ final class Push7_Subscribe_Button_Options {
 	}
 
 	/**
+	 * @since 0.0.1-dev
 	 * @return Push7_Subscribe_Button_Options
 	 */
 	public static function get_options() {

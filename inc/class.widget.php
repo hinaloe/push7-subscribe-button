@@ -19,11 +19,13 @@ class Push7_Subscribe_Button_Widget extends WP_Widget {
 
 	/**
 	 * @var array
+	 * @since 0.0.1-dev
 	 */
 	private $mode_variation = array();
 
 	/**
 	 * Push7_Subscribe_Button_Widget constructor.
+	 * @since 0.0.1-dev
 	 */
 	public function __construct() {
 		parent::__construct(
@@ -46,6 +48,8 @@ class Push7_Subscribe_Button_Widget extends WP_Widget {
 	 *
 	 * @param array $args
 	 * @param array $instance
+	 *
+	 * @since 0.0.1-dev
 	 */
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
@@ -66,6 +70,7 @@ class Push7_Subscribe_Button_Widget extends WP_Widget {
 	/**
 	 * @param array $instance
 	 *
+	 * @since 0.0.1-dev
 	 * @return string
 	 */
 	public function form( $instance ) {
@@ -116,6 +121,7 @@ class Push7_Subscribe_Button_Widget extends WP_Widget {
 	 * Sanitize widget form values as they are saved.
 	 *
 	 * @see WP_Widget::update()
+	 * @since 0.0.1-dev
 	 *
 	 * @param array $new_instance Values just sent to be saved.
 	 * @param array $old_instance Previously saved values from database.

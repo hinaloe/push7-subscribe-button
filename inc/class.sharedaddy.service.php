@@ -21,6 +21,7 @@ class Share_Push7 extends Sharing_Source {
 
 	/**
 	 * @var string shortname
+	 * @since 0.0.1-dev
 	 */
 	public $shortname = 'push7';
 
@@ -29,6 +30,7 @@ class Share_Push7 extends Sharing_Source {
 	 *
 	 * @param $id
 	 * @param array $settings
+	 * @since 0.0.1-dev
 	 */
 	public function __construct( $id, array $settings ) {
 		parent::__construct( $id, $settings );
@@ -45,6 +47,7 @@ class Share_Push7 extends Sharing_Source {
 	 * Sharing source name
 	 *
 	 * @return string
+	 * @since 0.0.1-dev
 	 */
 	public function get_name() {
 		return _x( 'Push Notification', 'as sharing source', 'push7-subscribe-button' );
@@ -52,6 +55,7 @@ class Share_Push7 extends Sharing_Source {
 
 	/**
 	 * @return bool
+	 * @since 0.0.1-dev
 	 */
 	public function has_custom_button_style() {
 		return $this->smart;
@@ -61,6 +65,7 @@ class Share_Push7 extends Sharing_Source {
 	 * Get Button for front
 	 *
 	 * @param $post WP_Post
+	 * @since 0.0.1-dev
 	 *
 	 * @return string
 	 */
@@ -74,12 +79,14 @@ class Share_Push7 extends Sharing_Source {
 				 * Filter Push7 Share Button title text
 				 *
 				 * @param string $text
+				 * @since 0.0.1-dev
 				 */
 				apply_filters( 'push7_sb_share_title', _x( 'Subscribe', 'share to', 'push7-subscribe-button' ) ),
 				/**
 				 * Filter Push7 Share Button description
 				 *
 				 * @param string $description
+				 * @since 0.0.1-dev
 				 */
 				apply_filters( 'push7_sb_share_description', __( 'Click to subscribe push notification with Push7', 'push7-subscribe-button' ) ),
 				'appid=' . Push7_Subscribe_Button::get_appid_inc_official(), 'sharing-push7-' . $post->ID
@@ -95,6 +102,7 @@ class Share_Push7 extends Sharing_Source {
 
 	/**
 	 * Footer action
+	 * @since 0.0.1-dev
 	 */
 	public function display_footer() {
 		if ( $this->smart ) {

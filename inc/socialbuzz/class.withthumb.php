@@ -1,4 +1,10 @@
 <?php
+/**
+ * Social Buzz With Thumbnail Mode
+ *
+ * @since 0.0.1-dev
+ * @package Push7_Subscribe_Button
+ */
 
 
 namespace Push7SubscribeButtoon\SocialBuzz;
@@ -15,11 +21,13 @@ require_once dirname( __FILE__ ) . '/class.base.php';
 /**
  * Class SocialWithThumb
  * @package Push7SubscribeButtoon\SocialBuzz
+ * @since 0.0.1-dev
  */
 class SocialWithThumb extends Base {
 
 	/**
 	 * @return void
+	 * @since 0.0.1-dev
 	 */
 	public function enqueue_scripts() {
 		if ( is_singular() ) {
@@ -31,6 +39,7 @@ class SocialWithThumb extends Base {
 
 	/**
 	 * @return string
+	 * @since 0.0.1-dev
 	 */
 	public function get_template() {
 		return sprintf( '<div class="push7-sb-sbz-with-thumb" id="push7-sb-sbz"><div class="push7-sb-sbz-with-thumb-thumbnail"></div><div class="push7-sb-sbz-with-thumb-subscribe">%s</div></div>',
@@ -45,6 +54,7 @@ class SocialWithThumb extends Base {
 
 	/**
 	 * @return string Inline CSS
+	 * @since 0.0.1-dev
 	 */
 	private function get_css() {
 		if ( has_post_thumbnail() && ! post_password_required() ) {

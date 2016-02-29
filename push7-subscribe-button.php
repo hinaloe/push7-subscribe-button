@@ -16,6 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Class Push7_Subscribe_Button
+ *
+ * @since 0.0.1-dev
+ */
 class Push7_Subscribe_Button {
 
 	const APP_ID_PATTERN = '[0-9a-f]{32}';
@@ -25,6 +30,10 @@ class Push7_Subscribe_Button {
 	const MAIN_ENTRY = __FILE__;
 
 	/**
+	 * get singleton instance
+	 *
+	 * @since 0.0.1-dev
+	 *
 	 * @return Push7_Subscribe_Button
 	 */
 	public static function get_instance() {
@@ -39,6 +48,7 @@ class Push7_Subscribe_Button {
 
 	/**
 	 * Push7_Subscribe_Button constructor.
+	 * @since 0.0.1-dev
 	 */
 	private function __construct() {
 		$this->add_actions();
@@ -48,6 +58,7 @@ class Push7_Subscribe_Button {
 
 	/**
 	 * Add action or filter hooks
+	 * @since 0.0.1-dev
 	 */
 	private function add_actions() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
@@ -62,6 +73,7 @@ class Push7_Subscribe_Button {
 
 	/**
 	 * Register scripts
+	 * @since 0.0.1-dev
 	 */
 	public function register_scripts() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
@@ -70,14 +82,29 @@ class Push7_Subscribe_Button {
 		wp_register_style( 'push7-custom-button', plugins_url( 'css/front' . $suffix . '.css', __FILE__ ) );
 	}
 
+	/**
+	 * Register plugin widgets
+	 *
+	 * @since 0.0.1-dev
+	 */
 	public function register_widget() {
 		register_widget( 'Push7_Subscribe_Button_Widget' );
 	}
 
+	/**
+	 * Load textdomain for plugin
+	 *
+	 * @since 0.0.1-dev
+	 */
 	public function load_textdomain() {
 		load_plugin_textdomain( 'push7-subscribe-button', null, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
+	/**
+	 * Load SocialBuzz Module
+	 *
+	 * @since 0.0.1-dev
+	 */
 	public function load_sbz() {
 		$option = Push7_Subscribe_Button_Options::get_options();
 		if ( $option->enable_social_buzz ) {
@@ -107,6 +134,7 @@ class Push7_Subscribe_Button {
 	}
 
 	/**
+	 * @since 0.0.1-dev
 	 * @return array
 	 */
 	public static function get_sbztypes() {
@@ -123,17 +151,35 @@ class Push7_Subscribe_Button {
 			),
 		);
 
+		/**
+		 * Filter Social buzz modules
+		 *
+		 * @since 0.0.1-dev
+		 *
+		 * @param array[] $modes {
+		 *
+		 *      @type string $file filename
+		 *      @type string $class classname
+		 *      @type string $name Module name to show
+		 * }
+		 */
 		return apply_filters( 'push7_sb_socialbuzz_types', $modes );
 	}
 
 	/**
 	 * Register Shortcode
+	 *
+	 * @since 0.0.1-dev
 	 */
 	public function register_shortcodes() {
 		add_shortcode( 'push7-sb', array( $this, 'shortcode' ) );
 	}
 
 	/**
+	 * Push7 Button Shortcode Handler
+	 *
+	 * @since 0.0.1-dev
+	 *
 	 * @param array $atts
 	 *
 	 * @return string
@@ -151,6 +197,9 @@ class Push7_Subscribe_Button {
 	}
 
 	/**
+	 *
+	 * @since 0.0.1-dev
+	 *
 	 * @return void
 	 */
 	public function jetpack() {
@@ -176,12 +225,18 @@ class Push7_Subscribe_Button {
 
 	}
 
+	/**
+	 * Uninstall action hook
+	 *
+	 * @since 0.0.1-dev
+	 */
 	public static function uninstall() {
 		// remove all settings of this plugin (general settings)
 		delete_option( self::PLUGIN_OPTIONS );
 	}
 
 	/**
+	 * @since 0.0.1-dev
 	 * @return string
 	 */
 	public static function get_appid() {
@@ -189,16 +244,26 @@ class Push7_Subscribe_Button {
 	}
 
 	/**
+	 * @since 0.0.1-dev
 	 * @return string
 	 */
 	public static function get_appid_inc_official() {
 		$app_id = self::get_appid();
 
+		/**
+		 * Filter Push7 APPNO to use is plugin
+		 *
+		 * @since 0.0.1-dev
+		 *
+		 * @param string $appno APPNO
+		 */
 		return apply_filters( 'push7_sb_appid', $app_id ? $app_id : get_option( self::PUSH7_APPNO_NAME, '' ) );
 	}
 
 	/**
 	 * get option
+	 *
+	 * @since 0.0.1-dev
 	 *
 	 * @return string
 	 */
@@ -209,6 +274,8 @@ class Push7_Subscribe_Button {
 
 	/**
 	 * @param string $type
+	 *
+	 * @since 0.0.1-dev
 	 *
 	 * @return string
 	 */
@@ -231,6 +298,10 @@ class Push7_Subscribe_Button {
 	}
 
 	/**
+	 * Get Push7 Official Button HTML
+	 *
+	 * @since 0.0.1-dev
+	 *
 	 * @param string $app_id
 	 * @param string $type
 	 *

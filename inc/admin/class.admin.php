@@ -1,5 +1,11 @@
 <?php
 /**
+ * Push7SubscribeButtoon\Admin class for Admin Screen
+ *
+ * @package Push7_Subscribe_Button
+ * @since 0.0.1-dev
+ */
+/**
  * Created by IntelliJ IDEA.
  * User: hina
  * Date: 2016/02/18
@@ -12,14 +18,24 @@ namespace Push7SubscribeButtoon\Admin;
  * Admin Screen Class
  *
  * @subpackage Push7SubscribeButtoon\Admin
+ * @since 0.0.1-dev
  */
 final class Admin {
 
 	/**
+	 * Singleton instance
+	 *
+	 * @since 0.0.1-dev
 	 * @var static
 	 */
 	private static $instance;
 
+	/**
+	 * get Singleton instance
+	 *
+	 * @since 0.0.1-dev
+	 * @return self
+	 */
 	public static function get_instance() {
 		if ( ! static::$instance ) {
 			static::$instance = new static;
@@ -29,6 +45,11 @@ final class Admin {
 
 	}
 
+	/**
+	 * Admin constructor.
+	 *
+	 * @since 0.0.1-dev
+	 */
 	private function __construct() {
 		add_action( 'admin_head', array( $this, 'admin_head' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -40,6 +61,12 @@ final class Admin {
 		) );
 	}
 
+
+	/**
+	 * Admin-init Action handler
+	 *
+	 * @since 0.0.1-dev
+	 */
 	public function init() {
 		register_setting( 'push7-ssb', \Push7_Subscribe_Button::PLUGIN_OPTIONS, array(
 			'Push7_Subscribe_Button_Options',
@@ -91,6 +118,11 @@ final class Admin {
 
 	}
 
+	/**
+	 * admin_menu action handler
+	 *
+	 * @since 0.0.1-dev
+	 */
 	public function admin_menu() {
 		add_options_page(
 			__( 'Push7 Subscribe Button', 'push7-subscribe-button' ),
@@ -101,10 +133,20 @@ final class Admin {
 		);
 	}
 
+	/**
+	 * admin_head action handler
+	 *
+	 * @since 0.0.1-dev
+	 */
 	public function admin_head() {
 
 	}
 
+	/**
+	 * enqueue admin scripts
+	 *
+	 * @since 0.0.1-dev
+	 */
 	public function enqueue_scripts() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		wp_register_style( 'push7-admin-sharing', plugins_url( 'css/admin-sharing' . $suffix . '.css', \Push7_Subscribe_Button::MAIN_ENTRY ) );
@@ -128,13 +170,27 @@ final class Admin {
 
 	}
 
-	public function settings_link( $actions ) {
+	/**
+	 * Settings_link filter
+	 *
+	 * @since 0.0.1-dev
+	 *
+	 * @param array $actions
+	 *
+	 * @return array
+	 */
+	public function settings_link( array $actions ) {
 		$settings_link = sprintf( '<a href="%s">%s</a>', esc_url( get_admin_url( null, 'options-general.php?page=push7-ssb' ) ), __( 'Settings', 'push7-subscribe-button' ) );
 		array_unshift( $actions, $settings_link );
 
 		return $actions;
 	}
 
+	/**
+	 * Plugin Admin screen View
+	 *
+	 * @since 0.0.1-dev
+	 */
 	public function admin_view() {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			global $current_user;

@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * SocialBuzz Base Module for extend
+ *
+ * @package Push7_Subscribe_Button
+ * @since 0.0.1-dev
+ */
+
 namespace Push7SubscribeButtoon\SocialBuzz;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Base
  * @subpackage Push7SubscribeButtoon\SocialBuzz
+ * @since 0.0.1-dev
  */
 abstract class Base {
 
@@ -40,6 +48,7 @@ abstract class Base {
 	 * @param string $content
 	 *
 	 * @return string
+	 * @since 0.0.1-dev
 	 */
 	final function the_content( $content ) {
 		global $wp_current_filter;
@@ -61,6 +70,7 @@ abstract class Base {
 		 * @param string $template
 		 * @param Base $button
 		 *
+		 * @since 0.0.1-dev
 		 * @global \WP_Post $post
 		 */
 		$content .= apply_filters( 'push7_sb_sb_template', $this->get_template(), $this );
@@ -72,16 +82,28 @@ abstract class Base {
 
 	/**
 	 * @return void
+	 * @since 0.0.1-dev
 	 */
 	abstract public function enqueue_scripts();
 
 	/**
 	 * @return string
+	 * @since 0.0.1-dev
 	 */
 	abstract public function get_template();
 
 
+	/**
+	 * register actions
+	 *
+	 * @since 0.0.1-dev
+	 */
 	protected function add_actions() {
+		/**
+		 * Push7 Social Buzz Module priority
+		 *
+		 * @param int $priority Social Buzz Module current Priority (default 14)
+		 */
 		$priority = (int) apply_filters( 'push7_sb_sb_priority', 14 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'wp_head', array( $this, 'display_head' ) );
@@ -92,12 +114,16 @@ abstract class Base {
 
 	/**
 	 * on Header
+	 *
+	 * @since 0.0.1-dev
 	 */
 	public function display_head() {
 	}
 
 	/**
 	 * on Footer
+	 *
+	 * @since 0.0.1-dev
 	 */
 	public function display_footer() {
 	}

@@ -1,4 +1,10 @@
 <?php
+/**
+ * Social Buzz Simple Mode
+ *
+ * @since 0.0.1-dev
+ * @package Push7_Subscribe_Button
+ */
 
 
 namespace Push7SubscribeButtoon\SocialBuzz;
@@ -15,11 +21,13 @@ require_once dirname( __FILE__ ) . '/class.base.php';
 /**
  * Class SocialSimple
  * @package Push7SubscribeButtoon\SocialBuzz
+ * @since 0.0.1-dev
  */
 class SocialSimple extends Base {
 
 	/**
 	 * @return void
+	 * @since 0.0.1-dev
 	 */
 	public function enqueue_scripts() {
 		if ( is_singular() ) {
@@ -29,6 +37,7 @@ class SocialSimple extends Base {
 
 	/**
 	 * @return string
+	 * @since 0.0.1-dev
 	 */
 	public function get_template() {
 		return sprintf( '<div class=push7-sb-sbz-simple id=push7-sb-sbz>%s</div>',
