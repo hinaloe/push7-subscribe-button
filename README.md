@@ -63,6 +63,18 @@ Yes, but You couldn't send notification without that.
 ### 1. Jetpack integration ###
 ![Jetpack integration](http://ps.w.org/push7-subscribe-button/assets/screenshot-1.png)
 
+### 2. Jetpack ShareButton (icon only) ###
+![Jetpack ShareButton (icon only)](http://ps.w.org/push7-subscribe-button/assets/screenshot-2.png)
+
+### 3. Jetpack ShareButton (Icon+Text) ###
+![Jetpack ShareButton (Icon+Text)](http://ps.w.org/push7-subscribe-button/assets/screenshot-3.png)
+
+### 4. Jetpack ShareButton (Official) ###
+![Jetpack ShareButton (Official)](http://ps.w.org/push7-subscribe-button/assets/screenshot-4.png)
+
+### 5. Subscribe Button Widget ###
+![Subscribe Button Widget](http://ps.w.org/push7-subscribe-button/assets/screenshot-5.png)
+
 
 ## Changelog ##
 

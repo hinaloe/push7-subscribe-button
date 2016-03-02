@@ -61,6 +61,10 @@ Yes, but You couldn't send notification without that.
 == Screenshots ==
 
 1. Jetpack integration
+2. Jetpack ShareButton (icon only)
+3. Jetpack ShareButton (Icon+Text)
+4. Jetpack ShareButton (Official)
+5. Subscribe Button Widget
 
 == Changelog ==
 
