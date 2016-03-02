@@ -2,12 +2,12 @@
 
 /**
  * Plugin Name: Push7 Subscribe Button
- * Version: 1.0.1
+ * Version: 1.0.2
  * Description: Easy setting Push7 subscribe button
  * Author: hinaloe
  * Author URI: https://hinaloe.net/
  * Plugin URI: https://hinaloe.net/portfolio/push7-subscribe-button
- * Text Domain: simp le-push-subscribe-button
+ * Text Domain: simple-push-subscribe-button
  * Domain Path: /languages
  * @package Push7 Subscribe button
  */

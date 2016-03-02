@@ -19,14 +19,14 @@ you have to register and install [Official plugin](https://wordpress.org/plugins
 
 This plugin only provide Subscribe button interface.
 
-=== Feature ===
+= Feature =
 
 - put official button everywhare with shortcode
 - Various types of announcement under article (developing)
 - Add official or unified button into Jetpack Share Buttons(Shardaddy).
 - Use App ID set by Official Plugin, or your custom APP ID
 
-=== Shortcode ===
+= Shortcode =
 
 = Basic usage =
 `[push7-sb]`
@@ -63,6 +63,9 @@ Yes, but You couldn't send notification without that.
 1. Jetpack integration
 
 == Changelog ==
+
+= 1.0.2 =
+fix text domain
 
 = 0.1 =
 * Init release
