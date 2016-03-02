@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Push7 Subscribe Button
- * Version: 1.0.1-dev
+ * Version: 1.0.1
  * Description: Easy setting Push7 subscribe button
  * Author: hinaloe
  * Author URI: https://hinaloe.net/
