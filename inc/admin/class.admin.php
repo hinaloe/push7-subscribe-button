@@ -72,12 +72,12 @@ final class Admin {
 			'Push7_Subscribe_Button_Options',
 			'create_options',
 		) );
-		add_settings_section( 'push7_ssb_options', __( 'Push7 Subscribe Button', 'push7-subscribe-button' ), null, 'push7-ssb' );
-		add_settings_section( 'push7_ssb_socialbuzz', __( 'Push7 Large Button', 'push7-subscribe-button' ), null, 'push7-ssb-sbz' );
+		add_settings_section( 'push7_ssb_options', __( 'Push7 Subscribe Button', 'simple-push-subscribe-button' ), null, 'push7-ssb' );
+		add_settings_section( 'push7_ssb_socialbuzz', __( 'Push7 Large Button', 'simple-push-subscribe-button' ), null, 'push7-ssb-sbz' );
 
 		add_settings_field(
 			'push7ssb_appno',
-			'<label for="push7ssb_appno">' . __( 'Alt Push7 AppNo (Option)', 'push7-subscribe-button' ) . '</label>',
+			'<label for="push7ssb_appno">' . __( 'Alt Push7 AppNo (Option)', 'simple-push-subscribe-button' ) . '</label>',
 			array( $this, 'render_appno' ),
 			'push7-ssb',
 			'push7_ssb_options'
@@ -85,7 +85,7 @@ final class Admin {
 		);
 		add_settings_field(
 			'push7ssb_enable_sbz',
-			'<label for="push7ssb_enable_sbz">' . __( 'Large link bellow post', 'push7-subscribe-button' ) . '</label>',
+			'<label for="push7ssb_enable_sbz">' . __( 'Large link bellow post', 'simple-push-subscribe-button' ) . '</label>',
 			array( $this, 'render_is_enable_sbz' ),
 			'push7-ssb',
 			'push7_ssb_options'
@@ -93,7 +93,7 @@ final class Admin {
 
 		add_settings_field(
 			'push7ssb_sbz_mode',
-			'<label for="push7ssb_sbz_mode">' . _x( 'Type', 'SocialBuzz-Select', 'push7-subscribe-button' ) . '</label>',
+			'<label for="push7ssb_sbz_mode">' . _x( 'Type', 'SocialBuzz-Select', 'simple-push-subscribe-button' ) . '</label>',
 			array( $this, 'render_sbz_mode' ),
 			'push7-ssb-sbz',
 			'push7_ssb_socialbuzz'
@@ -101,7 +101,7 @@ final class Admin {
 
 		add_settings_field(
 			'push7ssb_sbz_posttypes',
-			'<label for="push7ssb_sbz_posttypes">' . __( 'PostTypes to show it', 'push7-subscribe-button' ) . '</label>',
+			'<label for="push7ssb_sbz_posttypes">' . __( 'PostTypes to show it', 'simple-push-subscribe-button' ) . '</label>',
 			array( $this, 'render_sbz_posttypes' ),
 			'push7-ssb-sbz',
 			'push7_ssb_socialbuzz'
@@ -109,7 +109,7 @@ final class Admin {
 
 		add_settings_field(
 			'push7ssb_sbz_message',
-			'<label for="push7ssb_sbz_message">' . __( 'Message', 'push7-subscribe-button' ) . '</label>',
+			'<label for="push7ssb_sbz_message">' . __( 'Message', 'simple-push-subscribe-button' ) . '</label>',
 			array( $this, 'render_sbz_message' ),
 			'push7-ssb-sbz',
 			'push7_ssb_socialbuzz'
@@ -125,8 +125,8 @@ final class Admin {
 	 */
 	public function admin_menu() {
 		add_options_page(
-			__( 'Push7 Subscribe Button', 'push7-subscribe-button' ),
-			__( 'Push7 Buttons', 'push7-subscribe-button' ),
+			__( 'Push7 Subscribe Button', 'simple-push-subscribe-button' ),
+			__( 'Push7 Buttons', 'simple-push-subscribe-button' ),
 			'manage_options',
 			'push7-ssb',
 			array( $this, 'admin_view' )
@@ -180,7 +180,7 @@ final class Admin {
 	 * @return array
 	 */
 	public function settings_link( array $actions ) {
-		$settings_link = sprintf( '<a href="%s">%s</a>', esc_url( get_admin_url( null, 'options-general.php?page=push7-ssb' ) ), __( 'Settings', 'push7-subscribe-button' ) );
+		$settings_link = sprintf( '<a href="%s">%s</a>', esc_url( get_admin_url( null, 'options-general.php?page=push7-ssb' ) ), __( 'Settings', 'simple-push-subscribe-button' ) );
 		array_unshift( $actions, $settings_link );
 
 		return $actions;
@@ -202,7 +202,7 @@ final class Admin {
 		?>
 
 		<div class="wrap push7ssb-option">
-			<h1><?php _e( 'Push7 Subscribe Button Settings', 'push7-subscribe-button' ) ?></h1>
+			<h1><?php _e( 'Push7 Subscribe Button Settings', 'simple-push-subscribe-button' ) ?></h1>
 
 			<form method="post" action="options.php">
 				<?php
@@ -229,16 +229,16 @@ final class Admin {
 			esc_attr( get_option( \Push7_Subscribe_Button::PUSH7_APPNO_NAME, '0123456789ABCDEFGEHIJKLMNOPQRSTU' ) ),
 			\Push7_Subscribe_Button::APP_ID_PATTERN
 		);
-		printf( '<p class="description">%s</p>', __( 'Input if you want use subscribe button without Official Plugin, or another APPNO. <br>If, this value is empty, Official plugin setting will use for show button.', 'push7-subscribe-button' ) );
+		printf( '<p class="description">%s</p>', __( 'Input if you want use subscribe button without Official Plugin, or another APPNO. <br>If, this value is empty, Official plugin setting will use for show button.', 'simple-push-subscribe-button' ) );
 	}
 
 	public function render_is_enable_sbz() {
 		printf( '<input type="checkbox" id="push7ssb_enable_sbz" name="%s" value="on" %s ><label for="push7ssb_enable_sbz">%s</label>',
 			\Push7_Subscribe_Button::PLUGIN_OPTIONS . '[enable_social_buzz]',
 			checked( \Push7_Subscribe_Button_Options::get_options()->enable_social_buzz, true, false ),
-			__( 'Insert large Subscribe button bellow posts. (It likes Social Buzz)', 'push7-subscribe-button' )
+			__( 'Insert large Subscribe button bellow posts. (It likes Social Buzz)', 'simple-push-subscribe-button' )
 		);
-		printf( '<p class="description">%s</p>', __( 'It is look like SNS button of Viral Media. You can customize the following.', 'push7-subscribe-button' ) );
+		printf( '<p class="description">%s</p>', __( 'It is look like SNS button of Viral Media. You can customize the following.', 'simple-push-subscribe-button' ) );
 
 	}
 

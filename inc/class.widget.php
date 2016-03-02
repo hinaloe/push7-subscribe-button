@@ -30,15 +30,15 @@ class Push7_Subscribe_Button_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'push7-subscribe',
-			__( 'Push7 Subscribe Button', 'push7-subscribe-button' ),
+			__( 'Push7 Subscribe Button', 'simple-push-subscribe-button' ),
 			array(
-				'description' => __( 'Show push7 subscribe button.', 'push7-subscribe-button' ),
+				'description' => __( 'Show push7 subscribe button.', 'simple-push-subscribe-button' ),
 			)
 		);
 		$this->mode_variation = array(
-			'r' => __( 'Count on right', 'push7-subscribe-button' ),
-			't' => __( 'Vertical', 'push7-subscribe-button' ),
-			'n' => __( 'No count', 'push7-subscribe-button' ),
+			'r' => __( 'Count on right', 'simple-push-subscribe-button' ),
+			't' => __( 'Vertical', 'simple-push-subscribe-button' ),
+			'n' => __( 'No count', 'simple-push-subscribe-button' ),
 		);
 
 	}
@@ -74,14 +74,14 @@ class Push7_Subscribe_Button_Widget extends WP_Widget {
 	 * @return string
 	 */
 	public function form( $instance ) {
-		$title = isset( $instance['title'] ) ? $instance['title'] : __( 'Subscribe Push Notification', 'push7-subscribe-button' );
+		$title = isset( $instance['title'] ) ? $instance['title'] : __( 'Subscribe Push Notification', 'simple-push-subscribe-button' );
 		$mode  = ! empty( $instance['mode'] ) ? $instance['mode'] : 'r';
 		$appid = ! empty( $instance['appid'] ) ? $instance['appid'] : '';
 
 		?>
 		<p>
 			<label
-				for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title (Option):', 'push7-subscribe-button' ); ?></label>
+				for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title (Option):', 'simple-push-subscribe-button' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
 			       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text"
 			       value="<?php echo esc_attr( $title ); ?>">
@@ -89,7 +89,7 @@ class Push7_Subscribe_Button_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label
-				for="<?php echo $this->get_field_id( 'mode' ); ?>"><?php _e( 'Mode:', 'push7-subscribe-button' ); ?></label>
+				for="<?php echo $this->get_field_id( 'mode' ); ?>"><?php _e( 'Mode:', 'simple-push-subscribe-button' ); ?></label>
 			<select class="widefat" id="<?php echo $this->get_field_id( 'mode' ); ?>"
 			        name="<?php echo $this->get_field_name( 'mode' ); ?>">
 				<?php foreach ( $this->mode_variation as $m => $name ) :
@@ -103,7 +103,7 @@ class Push7_Subscribe_Button_Widget extends WP_Widget {
 
 		<p>
 			<label
-				for="<?php echo $this->get_field_id( 'appid' ); ?>"><?php _e( 'APPID (Option):', 'push7-subscribe-button' ); ?></label>
+				for="<?php echo $this->get_field_id( 'appid' ); ?>"><?php _e( 'APPID (Option):', 'simple-push-subscribe-button' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'appid' ); ?>"
 			       name="<?php echo $this->get_field_name( 'appid' ); ?>" type="text"
 			       value="<?php echo esc_attr( $appid ); ?>"

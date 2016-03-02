@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 
 		addtextdomain: {
 			options: {
-				textdomain: 'push7-subscribe-button',
+				textdomain: 'simple-push-subscribe-button',
 			},
 			target: {
 				files: {
@@ -31,7 +31,7 @@ module.exports = function( grunt ) {
 				options: {
 					domainPath: '/languages',
 					mainFile: 'push7-subscribe-button.php',
-					potFilename: 'push7-subscribe-button.pot',
+					potFilename: 'simple-push-subscribe-button.pot',
 					potHeaders: {
 						poedit: true,
 						'x-poedit-keywordslist': true

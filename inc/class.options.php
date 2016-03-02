@@ -117,7 +117,7 @@ final class Push7_Subscribe_Button_Options {
 			'appid'                => null,
 			'enable_social_buzz'   => false,
 			'social_buzz_mode'     => 'simple',
-			'social_buzz_message'  => __( 'Subscribe Latest Update with Push Notification!', 'push7-subscribe-button' ),
+			'social_buzz_message'  => __( 'Subscribe Latest Update with Push Notification!', 'simple-push-subscribe-button' ),
 			'social_buzz_posttype' => array( 'post' ),
 
 		);

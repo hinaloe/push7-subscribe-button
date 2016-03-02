@@ -7,7 +7,7 @@
  * Author: hinaloe
  * Author URI: https://hinaloe.net/
  * Plugin URI: https://hinaloe.net/portfolio/push7-subscribe-button
- * Text Domain: push7-subscribe-button
+ * Text Domain: simp le-push-subscribe-button
  * Domain Path: /languages
  * @package Push7 Subscribe button
  */
@@ -97,7 +97,7 @@ class Push7_Subscribe_Button {
 	 * @since 0.0.1-dev
 	 */
 	public function load_textdomain() {
-		load_plugin_textdomain( 'push7-subscribe-button', null, basename( dirname( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'simple-push-subscribe-button', null, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
@@ -142,12 +142,12 @@ class Push7_Subscribe_Button {
 			'simple'    => array(
 				'file'  => dirname( __FILE__ ) . '/inc/socialbuzz/class.simple.php',
 				'class' => '\Push7SubscribeButtoon\SocialBuzz\SocialSimple',
-				'name'  => __( 'Simple', 'push7-subscribe-button' ),
+				'name'  => __( 'Simple', 'simple-push-subscribe-button' ),
 			),
 			'withthumb' => array(
 				'file'  => dirname( __FILE__ ) . '/inc/socialbuzz/class.withthumb.php',
 				'class' => '\Push7SubscribeButtoon\SocialBuzz\SocialWithThumb',
-				'name'  => __( 'With Thumbnail or Site icon', 'push7-subscribe-button' ),
+				'name'  => __( 'With Thumbnail or Site icon', 'simple-push-subscribe-button' ),
 			),
 		);
 

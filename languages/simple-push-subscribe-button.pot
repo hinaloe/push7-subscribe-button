@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Push7 Subscribe Button package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Push7 Subscribe Button 0.1-alpha\n"
+"Project-Id-Version: Push7 Subscribe Button 1.0.1-dev\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/push7-subscribe-button\n"
-"POT-Creation-Date: 2016-02-28 00:12:46+00:00\n"
+"POT-Creation-Date: 2016-03-02 08:46:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,102 +29,102 @@ msgstr ""
 msgid "Push7 Subscribe Button"
 msgstr ""
 
-#: inc/admin/class.admin.php:49
+#: inc/admin/class.admin.php:76
 msgid "Push7 Large Button"
 msgstr ""
 
-#: inc/admin/class.admin.php:53
+#: inc/admin/class.admin.php:80
 msgid "Alt Push7 AppNo (Option)"
 msgstr ""
 
-#: inc/admin/class.admin.php:61
+#: inc/admin/class.admin.php:88
 msgid "Large link bellow post"
 msgstr ""
 
-#: inc/admin/class.admin.php:77
+#: inc/admin/class.admin.php:104
 msgid "PostTypes to show it"
 msgstr ""
 
-#: inc/admin/class.admin.php:85
+#: inc/admin/class.admin.php:112
 msgid "Message"
 msgstr ""
 
-#: inc/admin/class.admin.php:97
+#: inc/admin/class.admin.php:129
 msgid "Push7 Buttons"
 msgstr ""
 
-#: inc/admin/class.admin.php:132
+#: inc/admin/class.admin.php:183
 msgid "Settings"
 msgstr ""
 
-#: inc/admin/class.admin.php:149
+#: inc/admin/class.admin.php:205
 msgid "Push7 Subscribe Button Settings"
 msgstr ""
 
-#: inc/admin/class.admin.php:176
+#: inc/admin/class.admin.php:232
 msgid ""
 "Input if you want use subscribe button without Official Plugin, or another "
 "APPNO. <br>If, this value is empty, Official plugin setting will use for "
 "show button."
 msgstr ""
 
-#: inc/admin/class.admin.php:183
+#: inc/admin/class.admin.php:239
 msgid "Insert large Subscribe button bellow posts. (It likes Social Buzz)"
 msgstr ""
 
-#: inc/admin/class.admin.php:185
+#: inc/admin/class.admin.php:241
 msgid "It is look like SNS button of Viral Media. You can customize the following."
 msgstr ""
 
-#: inc/class.options.php:83
+#: inc/class.options.php:120
 msgid "Subscribe Latest Update with Push Notification!"
 msgstr ""
 
-#: inc/class.sharedaddy.service.php:84
+#: inc/class.sharedaddy.service.php:91
 msgid "Click to subscribe push notification with Push7"
 msgstr ""
 
-#: inc/class.widget.php:33
+#: inc/class.widget.php:35
 msgid "Show push7 subscribe button."
 msgstr ""
 
-#: inc/class.widget.php:37
+#: inc/class.widget.php:39
 msgid "Count on right"
 msgstr ""
 
-#: inc/class.widget.php:38
+#: inc/class.widget.php:40
 msgid "Vertical"
 msgstr ""
 
-#: inc/class.widget.php:39
+#: inc/class.widget.php:41
 msgid "No count"
 msgstr ""
 
-#: inc/class.widget.php:71
+#: inc/class.widget.php:77
 msgid "Subscribe Push Notification"
 msgstr ""
 
-#: inc/class.widget.php:78
+#: inc/class.widget.php:84
 msgid "Title (Option):"
 msgstr ""
 
-#: inc/class.widget.php:86
+#: inc/class.widget.php:92
 msgid "Mode:"
 msgstr ""
 
-#: inc/class.widget.php:100
+#: inc/class.widget.php:106
 msgid "APPID (Option):"
 msgstr ""
 
-#: inc/socialbuzz/class.simple.php:35
+#: inc/socialbuzz/class.simple.php:44
 msgid "%1$s Push Notification"
 msgstr ""
 
-#: push7-subscribe-button.php:117
+#: push7-subscribe-button.php:145
 msgid "Simple"
 msgstr ""
 
-#: push7-subscribe-button.php:122
+#: push7-subscribe-button.php:150
 msgid "With Thumbnail or Site icon"
 msgstr ""
 
@@ -144,17 +144,17 @@ msgstr ""
 msgid "https://hinaloe.net/"
 msgstr ""
 
-#: inc/admin/class.admin.php:69
+#: inc/admin/class.admin.php:96
 msgctxt "SocialBuzz-Select"
 msgid "Type"
 msgstr ""
 
-#: inc/class.sharedaddy.service.php:50
+#: inc/class.sharedaddy.service.php:53
 msgctxt "as sharing source"
 msgid "Push Notification"
 msgstr ""
 
-#: inc/class.sharedaddy.service.php:78
+#: inc/class.sharedaddy.service.php:84
 msgctxt "share to"
 msgid "Subscribe"
 msgstr ""

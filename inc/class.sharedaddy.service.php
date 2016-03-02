@@ -50,7 +50,7 @@ class Share_Push7 extends Sharing_Source {
 	 * @since 0.0.1-dev
 	 */
 	public function get_name() {
-		return _x( 'Push Notification', 'as sharing source', 'push7-subscribe-button' );
+		return _x( 'Push Notification', 'as sharing source', 'simple-push-subscribe-button' );
 	}
 
 	/**
@@ -81,14 +81,14 @@ class Share_Push7 extends Sharing_Source {
 				 * @param string $text
 				 * @since 0.0.1-dev
 				 */
-				apply_filters( 'push7_sb_share_title', _x( 'Subscribe', 'share to', 'push7-subscribe-button' ) ),
+				apply_filters( 'push7_sb_share_title', _x( 'Subscribe', 'share to', 'simple-push-subscribe-button' ) ),
 				/**
 				 * Filter Push7 Share Button description
 				 *
 				 * @param string $description
 				 * @since 0.0.1-dev
 				 */
-				apply_filters( 'push7_sb_share_description', __( 'Click to subscribe push notification with Push7', 'push7-subscribe-button' ) ),
+				apply_filters( 'push7_sb_share_description', __( 'Click to subscribe push notification with Push7', 'simple-push-subscribe-button' ) ),
 				'appid=' . Push7_Subscribe_Button::get_appid_inc_official(), 'sharing-push7-' . $post->ID
 			);
 		}

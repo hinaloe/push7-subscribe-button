@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Push7 Subscribe Button 0.1-alpha\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/push7-subscribe-"
 "button\n"
-"POT-Creation-Date: 2016-02-28 09:13+0900\n"
-"PO-Revision-Date: 2016-02-28 09:13+0900\n"
+"POT-Creation-Date: 2016-03-01 22:48-1000\n"
+"PO-Revision-Date: 2016-03-01 22:49-1000\n"
 "Last-Translator: Hinaloe <hina@hinaloe.net>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -27,39 +27,39 @@ msgstr ""
 msgid "Push7 Subscribe Button"
 msgstr "Push7 Subscribe Button"
 
-#: inc/admin/class.admin.php:49
+#: inc/admin/class.admin.php:76
 msgid "Push7 Large Button"
 msgstr "Push7 大きなボタン"
 
-#: inc/admin/class.admin.php:53
+#: inc/admin/class.admin.php:80
 msgid "Alt Push7 AppNo (Option)"
 msgstr "Push7 の AppNo (オプション)"
 
-#: inc/admin/class.admin.php:61
+#: inc/admin/class.admin.php:88
 msgid "Large link bellow post"
 msgstr "大きな購読ボタン"
 
-#: inc/admin/class.admin.php:77
+#: inc/admin/class.admin.php:104
 msgid "PostTypes to show it"
 msgstr "挿入する投稿タイプ"
 
-#: inc/admin/class.admin.php:85
+#: inc/admin/class.admin.php:112
 msgid "Message"
 msgstr "メッセージ"
 
-#: inc/admin/class.admin.php:97
+#: inc/admin/class.admin.php:129
 msgid "Push7 Buttons"
 msgstr "Push7 ボタン"
 
-#: inc/admin/class.admin.php:132
+#: inc/admin/class.admin.php:183
 msgid "Settings"
 msgstr "設定"
 
-#: inc/admin/class.admin.php:149
+#: inc/admin/class.admin.php:205
 msgid "Push7 Subscribe Button Settings"
 msgstr "Push7 Subscribe Button 設定"
 
-#: inc/admin/class.admin.php:176
+#: inc/admin/class.admin.php:232
 msgid ""
 "Input if you want use subscribe button without Official Plugin, or another "
 "APPNO. <br>If, this value is empty, Official plugin setting will use for "
@@ -69,65 +69,65 @@ msgstr ""
 "APPNO で購読ボタンを設置する場合のみ入力してください。この欄が空の場合、公式"
 "プラグインの設定が利用されます。"
 
-#: inc/admin/class.admin.php:183
+#: inc/admin/class.admin.php:239
 msgid "Insert large Subscribe button bellow posts. (It likes Social Buzz)"
 msgstr "大きな購読ボタンを投稿の後に挿入する"
 
-#: inc/admin/class.admin.php:185
+#: inc/admin/class.admin.php:241
 msgid ""
 "It is look like SNS button of Viral Media. You can customize the following."
 msgstr ""
 "バイラルメディアの SNS ボタンのようなものです。以下でカスタマイズできます。"
 
-#: inc/class.options.php:83
+#: inc/class.options.php:120
 msgid "Subscribe Latest Update with Push Notification!"
 msgstr "最新の更新を<br>プッシュ通知で購読しよう"
 
-#: inc/class.sharedaddy.service.php:84
+#: inc/class.sharedaddy.service.php:91
 msgid "Click to subscribe push notification with Push7"
 msgstr "Push7 でプッシュ通知を購読する"
 
-#: inc/class.widget.php:33
+#: inc/class.widget.php:35
 msgid "Show push7 subscribe button."
 msgstr "Push7 の通知ボタンを表示します."
 
-#: inc/class.widget.php:37
+#: inc/class.widget.php:39
 msgid "Count on right"
 msgstr "右にカウント"
 
-#: inc/class.widget.php:38
+#: inc/class.widget.php:40
 msgid "Vertical"
 msgstr "縦長"
 
-#: inc/class.widget.php:39
+#: inc/class.widget.php:41
 msgid "No count"
 msgstr "カウント無し"
 
-#: inc/class.widget.php:71
+#: inc/class.widget.php:77
 msgid "Subscribe Push Notification"
 msgstr "プッシュ通知を購読"
 
-#: inc/class.widget.php:78
+#: inc/class.widget.php:84
 msgid "Title (Option):"
 msgstr "タイトル (オプション):"
 
-#: inc/class.widget.php:86
+#: inc/class.widget.php:92
 msgid "Mode:"
 msgstr "モード:"
 
-#: inc/class.widget.php:100
+#: inc/class.widget.php:106
 msgid "APPID (Option):"
 msgstr "APPID (オプション):"
 
-#: inc/socialbuzz/class.simple.php:35
+#: inc/socialbuzz/class.simple.php:44
 msgid "%1$s Push Notification"
 msgstr "プッシュ通知を %1$s"
 
-#: push7-subscribe-button.php:117
+#: push7-subscribe-button.php:145
 msgid "Simple"
 msgstr "シンプル"
 
-#: push7-subscribe-button.php:122
+#: push7-subscribe-button.php:150
 msgid "With Thumbnail or Site icon"
 msgstr "アイキャッチ/サイトアイコンを表示"
 
@@ -147,17 +147,17 @@ msgstr "hinaloe"
 msgid "https://hinaloe.net/"
 msgstr "https://hinaloe.net/"
 
-#: inc/admin/class.admin.php:69
+#: inc/admin/class.admin.php:96
 msgctxt "SocialBuzz-Select"
 msgid "Type"
 msgstr "モード"
 
-#: inc/class.sharedaddy.service.php:50
+#: inc/class.sharedaddy.service.php:53
 msgctxt "as sharing source"
 msgid "Push Notification"
 msgstr "プッシュ通知"
 
-#: inc/class.sharedaddy.service.php:78
+#: inc/class.sharedaddy.service.php:84
 msgctxt "share to"
 msgid "Subscribe"
 msgstr "購読する"

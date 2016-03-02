@@ -41,7 +41,7 @@ class SocialSimple extends Base {
 	 */
 	public function get_template() {
 		return sprintf( '<div class=push7-sb-sbz-simple id=push7-sb-sbz>%s</div>',
-			sprintf( __( '%1$s Push Notification', 'push7-subscribe-button' ), \Push7_Subscribe_Button::get_official_button( \Push7_Subscribe_Button::get_appid_inc_official(), 'r' ) )
+			sprintf( __( '%1$s Push Notification', 'simple-push-subscribe-button' ), \Push7_Subscribe_Button::get_official_button( \Push7_Subscribe_Button::get_appid_inc_official(), 'r' ) )
 		);
 
 	}
