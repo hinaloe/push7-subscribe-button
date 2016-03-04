@@ -78,6 +78,9 @@ Yes, but You couldn't send notification without that.
 
 ## Changelog ##
 
+### 1.0.3 ###
+fix translation issue
+
 ### 1.0.2 ###
 fix text domain
 
