@@ -52,6 +52,7 @@ class Push7_Subscribe_Button {
 	 */
 	private function __construct() {
 		$this->add_actions();
+		$this->load_textdomain();
 		$this->jetpack();
 
 	}
@@ -64,7 +65,6 @@ class Push7_Subscribe_Button {
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
 		add_action( 'init', array( $this, 'register_shortcodes' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
-		add_action( 'init', array( $this, 'load_textdomain' ) );
 		add_action( 'init', array( $this, 'load_sbz' ) );
 //		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 //		add_action( 'admin_init', array( $this, 'admin_init' ) );
