@@ -32,6 +32,7 @@ class SocialSimple extends Base {
 	public function enqueue_scripts() {
 		if ( is_singular() ) {
 			wp_enqueue_style( 'push7-custom-button' );
+			wp_enqueue_script( 'push7-subscribe-button' );
 		}
 	}
 
