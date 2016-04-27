@@ -68,11 +68,15 @@ Yes, but You couldn't send notification without that.
 
 == Changelog ==
 
+= 1.0.4 =
+
+* fix: SocialBuzz couldn't show official button
+
 = 1.0.3 =
-fix translation issue
+* fix translation issue
 
 = 1.0.2 =
-fix text domain
+* fix text domain
 
 = 0.1 =
 * Init release
