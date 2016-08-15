@@ -3,7 +3,7 @@
 **Donate link:** https://hinaloe.net/donate  
 **Tags:** Push Notification, desktop notifications, notifications, web push  
 **Requires at least:** 4.2  
-**Tested up to:** 4.4  
+**Tested up to:** 4.6  
 **Stable tag:** trunk  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -78,11 +78,15 @@ Yes, but You couldn't send notification without that.
 
 ## Changelog ##
 
+### 1.0.4 ###
+
+* fix: SocialBuzz couldn't show official button
+
 ### 1.0.3 ###
-fix translation issue
+* fix translation issue
 
 ### 1.0.2 ###
-fix text domain
+* fix text domain
 
 ### 0.1 ###
 * Init release
