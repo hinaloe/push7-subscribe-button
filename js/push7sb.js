@@ -74,6 +74,6 @@ var p7sb;
             return '10K+';
         };
         return Push7SubscribeButton;
-    })();
+    }());
     jQuery(function () { return new Push7SubscribeButton(); });
 })(p7sb || (p7sb = {}));
