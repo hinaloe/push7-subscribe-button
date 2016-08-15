@@ -157,7 +157,7 @@
 </span></span><span id="50" class="l"><span class="php-comment">     * @since 0.0.1-dev
 </span></span><span id="51" class="l"><span class="php-comment">     */</span>
 </span><span id="52" class="l">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> get_name() {
-</span><span id="53" class="l">        <span class="php-keyword1">return</span> _x( <span class="php-quote">'Push Notification'</span>, <span class="php-quote">'as sharing source'</span>, <span class="php-quote">'push7-subscribe-button'</span> );
+</span><span id="53" class="l">        <span class="php-keyword1">return</span> _x( <span class="php-quote">'Push Notification'</span>, <span class="php-quote">'as sharing source'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> );
 </span><span id="54" class="l">    }
 </span><span id="55" class="l">
 </span><span id="56" class="l">    <span class="php-comment">/**
@@ -188,14 +188,14 @@
 </span></span><span id="81" class="l"><span class="php-comment">                 * @param string $text
 </span></span><span id="82" class="l"><span class="php-comment">                 * @since 0.0.1-dev
 </span></span><span id="83" class="l"><span class="php-comment">                 */</span>
-</span><span id="84" class="l">                apply_filters( <span class="php-quote">'push7_sb_share_title'</span>, _x( <span class="php-quote">'Subscribe'</span>, <span class="php-quote">'share to'</span>, <span class="php-quote">'push7-subscribe-button'</span> ) ),
+</span><span id="84" class="l">                apply_filters( <span class="php-quote">'push7_sb_share_title'</span>, _x( <span class="php-quote">'Subscribe'</span>, <span class="php-quote">'share to'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ) ),
 </span><span id="85" class="l">                <span class="php-comment">/**
 </span></span><span id="86" class="l"><span class="php-comment">                 * Filter Push7 Share Button description
 </span></span><span id="87" class="l"><span class="php-comment">                 *
 </span></span><span id="88" class="l"><span class="php-comment">                 * @param string $description
 </span></span><span id="89" class="l"><span class="php-comment">                 * @since 0.0.1-dev
 </span></span><span id="90" class="l"><span class="php-comment">                 */</span>
-</span><span id="91" class="l">                apply_filters( <span class="php-quote">'push7_sb_share_description'</span>, __( <span class="php-quote">'Click to subscribe push notification with Push7'</span>, <span class="php-quote">'push7-subscribe-button'</span> ) ),
+</span><span id="91" class="l">                apply_filters( <span class="php-quote">'push7_sb_share_description'</span>, __( <span class="php-quote">'Click to subscribe push notification with Push7'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ) ),
 </span><span id="92" class="l">                <span class="php-quote">'appid='</span> . Push7_Subscribe_Button::get_appid_inc_official(), <span class="php-quote">'sharing-push7-'</span> . <span class="php-var">$post</span>-&gt;ID
 </span><span id="93" class="l">            );
 </span><span id="94" class="l">        }

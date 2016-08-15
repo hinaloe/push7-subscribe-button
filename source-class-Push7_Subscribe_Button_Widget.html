@@ -137,15 +137,15 @@
 </span><span id="30" class="l">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct() {
 </span><span id="31" class="l">        parent::__construct(
 </span><span id="32" class="l">            <span class="php-quote">'push7-subscribe'</span>,
-</span><span id="33" class="l">            __( <span class="php-quote">'Push7 Subscribe Button'</span>, <span class="php-quote">'push7-subscribe-button'</span> ),
+</span><span id="33" class="l">            __( <span class="php-quote">'Push7 Subscribe Button'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ),
 </span><span id="34" class="l">            <span class="php-keyword1">array</span>(
-</span><span id="35" class="l">                <span class="php-quote">'description'</span> =&gt; __( <span class="php-quote">'Show push7 subscribe button.'</span>, <span class="php-quote">'push7-subscribe-button'</span> ),
+</span><span id="35" class="l">                <span class="php-quote">'description'</span> =&gt; __( <span class="php-quote">'Show push7 subscribe button.'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ),
 </span><span id="36" class="l">            )
 </span><span id="37" class="l">        );
 </span><span id="38" class="l">        <span class="php-var">$this</span>-&gt;mode_variation = <span class="php-keyword1">array</span>(
-</span><span id="39" class="l">            <span class="php-quote">'r'</span> =&gt; __( <span class="php-quote">'Count on right'</span>, <span class="php-quote">'push7-subscribe-button'</span> ),
-</span><span id="40" class="l">            <span class="php-quote">'t'</span> =&gt; __( <span class="php-quote">'Vertical'</span>, <span class="php-quote">'push7-subscribe-button'</span> ),
-</span><span id="41" class="l">            <span class="php-quote">'n'</span> =&gt; __( <span class="php-quote">'No count'</span>, <span class="php-quote">'push7-subscribe-button'</span> ),
+</span><span id="39" class="l">            <span class="php-quote">'r'</span> =&gt; __( <span class="php-quote">'Count on right'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ),
+</span><span id="40" class="l">            <span class="php-quote">'t'</span> =&gt; __( <span class="php-quote">'Vertical'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ),
+</span><span id="41" class="l">            <span class="php-quote">'n'</span> =&gt; __( <span class="php-quote">'No count'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ),
 </span><span id="42" class="l">        );
 </span><span id="43" class="l">
 </span><span id="44" class="l">    }
@@ -181,14 +181,14 @@
 </span></span><span id="74" class="l"><span class="php-comment">     * @return string
 </span></span><span id="75" class="l"><span class="php-comment">     */</span>
 </span><span id="76" class="l">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> form( <span class="php-var">$instance</span> ) {
-</span><span id="77" class="l">        <span class="php-var">$title</span> = <span class="php-keyword1">isset</span>( <span class="php-var">$instance</span>[<span class="php-quote">'title'</span>] ) ? <span class="php-var">$instance</span>[<span class="php-quote">'title'</span>] : __( <span class="php-quote">'Subscribe Push Notification'</span>, <span class="php-quote">'push7-subscribe-button'</span> );
+</span><span id="77" class="l">        <span class="php-var">$title</span> = <span class="php-keyword1">isset</span>( <span class="php-var">$instance</span>[<span class="php-quote">'title'</span>] ) ? <span class="php-var">$instance</span>[<span class="php-quote">'title'</span>] : __( <span class="php-quote">'Subscribe Push Notification'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> );
 </span><span id="78" class="l">        <span class="php-var">$mode</span>  = ! <span class="php-keyword1">empty</span>( <span class="php-var">$instance</span>[<span class="php-quote">'mode'</span>] ) ? <span class="php-var">$instance</span>[<span class="php-quote">'mode'</span>] : <span class="php-quote">'r'</span>;
 </span><span id="79" class="l">        <span class="php-var">$appid</span> = ! <span class="php-keyword1">empty</span>( <span class="php-var">$instance</span>[<span class="php-quote">'appid'</span>] ) ? <span class="php-var">$instance</span>[<span class="php-quote">'appid'</span>] : <span class="php-quote">''</span>;
 </span><span id="80" class="l">
 </span><span id="81" class="l">        <span class="xlang">?&gt;</span>
 </span><span id="82" class="l">        &lt;p&gt;
 </span><span id="83" class="l">            &lt;label
-</span><span id="84" class="l">                <span class="php-keyword1">for</span>=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_id( 'title' ); ?&gt;&quot;</span>&gt;<span class="xlang">&lt;?php</span> _e( <span class="php-quote">'Title (Option):'</span>, <span class="php-quote">'push7-subscribe-button'</span> ); <span class="xlang">?&gt;</span>&lt;/label&gt;
+</span><span id="84" class="l">                <span class="php-keyword1">for</span>=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_id( 'title' ); ?&gt;&quot;</span>&gt;<span class="xlang">&lt;?php</span> _e( <span class="php-quote">'Title (Option):'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ); <span class="xlang">?&gt;</span>&lt;/label&gt;
 </span><span id="85" class="l">            &lt;input <span class="php-keyword1">class</span>=<span class="php-quote">&quot;widefat&quot;</span> id=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_id( 'title' ); ?&gt;&quot;</span>
 </span><span id="86" class="l">                   name=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_name( 'title' ); ?&gt;&quot;</span> type=<span class="php-quote">&quot;text&quot;</span>
 </span><span id="87" class="l">                   value=<span class="php-quote">&quot;&lt;?php echo esc_attr( </span><span class="php-var">$title</span><span class="php-quote"> ); ?&gt;&quot;</span>&gt;
@@ -196,7 +196,7 @@
 </span><span id="89" class="l">        &lt;/p&gt;
 </span><span id="90" class="l">        &lt;p&gt;
 </span><span id="91" class="l">            &lt;label
-</span><span id="92" class="l">                <span class="php-keyword1">for</span>=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_id( 'mode' ); ?&gt;&quot;</span>&gt;<span class="xlang">&lt;?php</span> _e( <span class="php-quote">'Mode:'</span>, <span class="php-quote">'push7-subscribe-button'</span> ); <span class="xlang">?&gt;</span>&lt;/label&gt;
+</span><span id="92" class="l">                <span class="php-keyword1">for</span>=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_id( 'mode' ); ?&gt;&quot;</span>&gt;<span class="xlang">&lt;?php</span> _e( <span class="php-quote">'Mode:'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ); <span class="xlang">?&gt;</span>&lt;/label&gt;
 </span><span id="93" class="l">            &lt;select <span class="php-keyword1">class</span>=<span class="php-quote">&quot;widefat&quot;</span> id=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_id( 'mode' ); ?&gt;&quot;</span>
 </span><span id="94" class="l">                    name=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_name( 'mode' ); ?&gt;&quot;</span>&gt;
 </span><span id="95" class="l">                <span class="xlang">&lt;?php</span> <span class="php-keyword1">foreach</span> ( <span class="php-var">$this</span>-&gt;mode_variation <span class="php-keyword1">as</span> <span class="php-var">$m</span> =&gt; <span class="php-var">$name</span> ) :
@@ -210,7 +210,7 @@
 </span><span id="103" class="l">
 </span><span id="104" class="l">        &lt;p&gt;
 </span><span id="105" class="l">            &lt;label
-</span><span id="106" class="l">                <span class="php-keyword1">for</span>=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_id( 'appid' ); ?&gt;&quot;</span>&gt;<span class="xlang">&lt;?php</span> _e( <span class="php-quote">'APPID (Option):'</span>, <span class="php-quote">'push7-subscribe-button'</span> ); <span class="xlang">?&gt;</span>&lt;/label&gt;
+</span><span id="106" class="l">                <span class="php-keyword1">for</span>=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_id( 'appid' ); ?&gt;&quot;</span>&gt;<span class="xlang">&lt;?php</span> _e( <span class="php-quote">'APPID (Option):'</span>, <span class="php-quote">'simple-push-subscribe-button'</span> ); <span class="xlang">?&gt;</span>&lt;/label&gt;
 </span><span id="107" class="l">            &lt;input <span class="php-keyword1">class</span>=<span class="php-quote">&quot;widefat&quot;</span> id=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_id( 'appid' ); ?&gt;&quot;</span>
 </span><span id="108" class="l">                   name=<span class="php-quote">&quot;&lt;?php echo </span><span class="php-var">$this</span><span class="php-quote">-&gt;get_field_name( 'appid' ); ?&gt;&quot;</span> type=<span class="php-quote">&quot;text&quot;</span>
 </span><span id="109" class="l">                   value=<span class="php-quote">&quot;&lt;?php echo esc_attr( </span><span class="php-var">$appid</span><span class="php-quote"> ); ?&gt;&quot;</span>
