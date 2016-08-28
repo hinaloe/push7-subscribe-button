@@ -68,6 +68,9 @@ Yes, but You couldn't send notification without that.
 
 == Changelog ==
 
+= 1.1.0 =
+* Optimize performance with omit depulicate request
+
 = 1.0.4 =
 
 * fix: SocialBuzz couldn't show official button

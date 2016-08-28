@@ -5,6 +5,7 @@
 
 
 module p7sb {
+	"use strict";
 
 
 
@@ -31,7 +32,6 @@ module p7sb {
 	 * self-update push7-jetpack-button count & url
 	 */
 	export let update:()=>void;
-	"use strict";
 
 	class Push7SubscribeButton {
 
@@ -49,11 +49,10 @@ module p7sb {
 		/**
 		 * Update Button Count & URL
 		 */
-		public updateCount():void {
+		public updateCount(): void {
 			const $nodes = $('a.share-push7');
-			$nodes.each((index:number, element:HTMLAnchorElement)=> {
+			$nodes.each((index: number, element: HTMLAnchorElement)=> {
 				if (element.dataset['loaded'])return;
-				element.dataset['loaded'] = 'loaded';
 				const href = element.href;
 				if (!href || typeof href !== 'string' || href.indexOf('appid=') === -1)return;
 				let appid = href.substr(href.indexOf('appid=') + 6);
@@ -61,19 +60,24 @@ module p7sb {
 					appid = appid.substr(0, appid.indexOf('&'));
 				}
 				if (appid.length <= 0)return;
+				const $elements = $nodes.filter(`[href$="appid=${appid}"]`);
+				$elements.attr('data-loaded', 'loaded');
 				const url = 'https://api.push7.jp/api/v1/:app_id/head'.replace(':app_id', appid);
 				$.when($.ajax({
 					url,
 					dataType: 'json'
 
-				}).then((res:Push7_HEAD)=> {
+				}).then((res: Push7_HEAD)=> {
 					if (res.error) {
 						return $.Deferred().reject(res.error);
 
 					}
-					element.href = "https://" + (res.alias ? res.alias : res.domain);
-					Push7SubscribeButton.addCount(element, res.subscribers);
-				})).fail(()=>element.parentNode.removeChild(element));
+					$elements.attr('href', "https://" + (res.alias ? res.alias : res.domain));
+					$elements.each(function (index, elem) {
+						Push7SubscribeButton.addCount(elem, res.subscribers);
+
+					})
+				})).fail(()=>{$elements.parent().remove()});
 
 			})
 		}
@@ -110,6 +114,6 @@ module p7sb {
 
 	}
 
-	jQuery(()=> new Push7SubscribeButton());
+	jQuery(()=>{ new Push7SubscribeButton()});
 
 }
