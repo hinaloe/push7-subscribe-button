@@ -4,12 +4,12 @@
  */
 var p7sb;
 (function (p7sb) {
+    "use strict";
     /**
      * jQuery shortcut
      * @type {JQueryStatic}
      */
     var $ = jQuery;
-    "use strict";
     var Push7SubscribeButton = (function () {
         /**
          * Push7SubscribeButton constructor
@@ -27,7 +27,6 @@ var p7sb;
             $nodes.each(function (index, element) {
                 if (element.dataset['loaded'])
                     return;
-                element.dataset['loaded'] = 'loaded';
                 var href = element.href;
                 if (!href || typeof href !== 'string' || href.indexOf('appid=') === -1)
                     return;
@@ -37,6 +36,8 @@ var p7sb;
                 }
                 if (appid.length <= 0)
                     return;
+                var $elements = $nodes.filter("[href$=\"appid=" + appid + "\"]");
+                $elements.attr('data-loaded', 'loaded');
                 var url = 'https://api.push7.jp/api/v1/:app_id/head'.replace(':app_id', appid);
                 $.when($.ajax({
                     url: url,
@@ -45,9 +46,11 @@ var p7sb;
                     if (res.error) {
                         return $.Deferred().reject(res.error);
                     }
-                    element.href = "https://" + (res.alias ? res.alias : res.domain);
-                    Push7SubscribeButton.addCount(element, res.subscribers);
-                })).fail(function () { return element.parentNode.removeChild(element); });
+                    $elements.attr('href', "https://" + (res.alias ? res.alias : res.domain));
+                    $elements.each(function (index, elem) {
+                        Push7SubscribeButton.addCount(elem, res.subscribers);
+                    });
+                })).fail(function () { $elements.parent().remove(); });
             });
         };
         /**
@@ -75,5 +78,5 @@ var p7sb;
         };
         return Push7SubscribeButton;
     }());
-    jQuery(function () { return new Push7SubscribeButton(); });
+    jQuery(function () { new Push7SubscribeButton(); });
 })(p7sb || (p7sb = {}));
