@@ -53,7 +53,6 @@ module p7sb {
 			const $nodes = $('a.share-push7');
 			$nodes.each((index: number, element: HTMLAnchorElement)=> {
 				if (element.dataset['loaded'])return;
-				element.dataset['loaded'] = 'loaded';
 				const href = element.href;
 				if (!href || typeof href !== 'string' || href.indexOf('appid=') === -1)return;
 				let appid = href.substr(href.indexOf('appid=') + 6);
@@ -78,7 +77,7 @@ module p7sb {
 						Push7SubscribeButton.addCount(elem, res.subscribers);
 
 					})
-				})).fail(()=>$elements.remove());
+				})).fail(()=>{$elements.parent().remove()});
 
 			})
 		}
@@ -115,6 +114,6 @@ module p7sb {
 
 	}
 
-	jQuery(()=> new Push7SubscribeButton());
+	jQuery(()=>{ new Push7SubscribeButton()});
 
 }
