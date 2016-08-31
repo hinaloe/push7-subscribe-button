@@ -39,7 +39,7 @@ module p7sb {
 		 * Push7SubscribeButton constructor
 		 */
 		constructor() {
-			$(document.body).on('post-load', e=>this.onLoadInfinityScroll(e));
+			$(document.body).on('post-load', (e: JQueryEventObject) =>this.onLoadInfinityScroll(e));
 			p7sb.update = this.updateCount;
 			this.updateCount();
 
@@ -78,7 +78,6 @@ module p7sb {
 
 					})
 				})).fail(()=>{$elements.parent().remove()});
-
 			})
 		}
 
@@ -90,7 +89,7 @@ module p7sb {
 		private static addCount(element:Element, count:number) {
 			const c = document.createElement('span');
 			c.className = 'share-count';
-			c.textContent = Push7SubscribeButton.format_count(count);
+			c.textContent = Push7SubscribeButton.formatCount(count);
 			element.firstChild.appendChild(c);
 		}
 
@@ -100,7 +99,7 @@ module p7sb {
 
 		}
 
-		private static format_count(count:number):string {
+		private static formatCount(count:number):string {
 			if (count < 1000) {
 				return count.toString();
 			}
