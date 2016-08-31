@@ -39,7 +39,7 @@ module p7sb {
 		 * Push7SubscribeButton constructor
 		 */
 		constructor() {
-			$(document.body).on('post-load', this.onLoadInfinityScroll);
+			$(document.body).on('post-load', e=>this.onLoadInfinityScroll(e));
 			p7sb.update = this.updateCount;
 			this.updateCount();
 
