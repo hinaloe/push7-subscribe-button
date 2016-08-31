@@ -15,7 +15,8 @@ var p7sb;
          * Push7SubscribeButton constructor
          */
         function Push7SubscribeButton() {
-            $(document.body).on('post-load', this.onLoadInfinityScroll);
+            var _this = this;
+            $(document.body).on('post-load', function (e) { return _this.onLoadInfinityScroll(e); });
             p7sb.update = this.updateCount;
             this.updateCount();
         }
@@ -61,13 +62,13 @@ var p7sb;
         Push7SubscribeButton.addCount = function (element, count) {
             var c = document.createElement('span');
             c.className = 'share-count';
-            c.textContent = Push7SubscribeButton.format_count(count);
+            c.textContent = Push7SubscribeButton.formatCount(count);
             element.firstChild.appendChild(c);
         };
         Push7SubscribeButton.prototype.onLoadInfinityScroll = function (e) {
             this.updateCount();
         };
-        Push7SubscribeButton.format_count = function (count) {
+        Push7SubscribeButton.formatCount = function (count) {
             if (count < 1000) {
                 return count.toString();
             }
