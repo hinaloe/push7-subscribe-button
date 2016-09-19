@@ -24,6 +24,7 @@ This plugin only provide Subscribe button interface.
 - put official button everywhare with shortcode
 - Various types of announcement under article (developing)
 - Add official or unified button into Jetpack Share Buttons(Shardaddy).
+- Widget for subscribe Push7 Button
 - Use App ID set by Official Plugin, or your custom APP ID
 
 = Shortcode =
