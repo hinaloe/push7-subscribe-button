@@ -193,8 +193,5 @@ final class Push7_Subscribe_Button_Options {
 		}
 
 		return new self( $options );
-
 	}
-
-
 }

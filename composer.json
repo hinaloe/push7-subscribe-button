@@ -1,0 +1,16 @@
+{
+    "name": "hinaloe/simple-push-subscribe-button",
+    "description": "Easy setup Push7 Subscribe Button, and inject Jetpack",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "hina",
+            "email": "hina@hinaloe.net"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": ["inc"]
+    }
+}

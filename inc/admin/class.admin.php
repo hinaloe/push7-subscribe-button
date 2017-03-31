@@ -288,6 +288,5 @@ final class Admin {
 	public function render_sbz_message() {
 		printf( '<input type="text" id="push7ssb_sbz_message" class="regular-text" name="%s" value="%s"
 		/>', \Push7_Subscribe_Button::PLUGIN_OPTIONS . '[social_buzz_message]', esc_attr( \Push7_Subscribe_Button_Options::get_options()->social_buzz_message ) );
-
 	}
 }

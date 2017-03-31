@@ -9,8 +9,6 @@
 
 namespace Push7SubscribeButtoon\SocialBuzz;
 
-require_once dirname( __FILE__ ) . '/class.base.php';
-
 /**
  * Created by IntelliJ IDEA.
  * User: hina

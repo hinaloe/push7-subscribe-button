@@ -115,7 +115,7 @@ class Push7_Subscribe_Button {
 
 				return;
 			}
-			require_once $sm['file'];
+//			require_once $sm['file'];
 			if ( ! class_exists( $sm['class'] ) ) {
 				trigger_error( 'Class ' . $sm['class'] . ' is not found at ' . __FILE__ . ' on line ' . __LINE__ );
 
@@ -204,7 +204,7 @@ class Push7_Subscribe_Button {
 	 */
 	public function jetpack() {
 		if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'sharedaddy' ) ) {
-			require_once dirname( __FILE__ ) . '/inc/class.sharedaddy.php';
+			add_action( 'jetpack_modules_loaded', array( 'Push7SB_Jetpack', 'init' ), 11 );
 		}
 	}
 
@@ -219,8 +219,10 @@ class Push7_Subscribe_Button {
 			\Push7SubscribeButtoon\Admin\Admin::get_instance();
 		}*/
 
+	/**
+	 * Load admin menu.
+	 */
 	public function admin_menu() {
-		require_once dirname( __FILE__ ) . '/inc/admin/class.admin.php';
 		\Push7SubscribeButtoon\Admin\Admin::get_instance()->admin_menu();
 
 	}
@@ -319,8 +321,8 @@ class Push7_Subscribe_Button {
 	}
 }
 
+require_once dirname( __FILE__ ) . '/vendor/autoload.php';
+
 register_uninstall_hook( __FILE__, array( 'Push7_Subscribe_Button', 'uninstall' ) );
 
 add_action( 'plugins_loaded', array( 'Push7_Subscribe_Button', 'get_instance' ) );
-require_once dirname( __FILE__ ) . '/inc/class.widget.php';
-require_once dirname( __FILE__ ) . '/inc/class.options.php';

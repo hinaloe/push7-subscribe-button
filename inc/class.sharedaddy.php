@@ -11,9 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
-add_action( 'jetpack_modules_loaded', array( 'Push7SB_Jetpack', 'init' ), 11 );
-
 /**
  * Class Push7SB_Jetpack
  *
@@ -64,7 +61,6 @@ class Push7SB_Jetpack {
 	 * @since 0.0.1-dev
 	 */
 	public function add_sharing_services( array $services ) {
-		require_once dirname( __FILE__ ) . '/class.sharedaddy.service.php';
 		if ( ! array_key_exists( 'push7', $services ) ) {
 			$services['push7'] = 'Share_Push7';
 		}
