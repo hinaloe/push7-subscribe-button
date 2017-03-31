@@ -31,7 +31,7 @@ final class Admin {
 	private static $instance;
 
 	/**
-	 * get Singleton instance
+	 * Get Singleton instance
 	 *
 	 * @since 0.0.1-dev
 	 * @return self
@@ -119,7 +119,7 @@ final class Admin {
 	}
 
 	/**
-	 * admin_menu action handler
+	 * Admin_menu action handler
 	 *
 	 * @since 0.0.1-dev
 	 */
@@ -134,7 +134,7 @@ final class Admin {
 	}
 
 	/**
-	 * admin_head action handler
+	 * Admin_head action handler
 	 *
 	 * @since 0.0.1-dev
 	 */
@@ -143,7 +143,7 @@ final class Admin {
 	}
 
 	/**
-	 * enqueue admin scripts
+	 * Enqueue admin scripts
 	 *
 	 * @since 0.0.1-dev
 	 */
@@ -175,7 +175,7 @@ final class Admin {
 	 *
 	 * @since 0.0.1-dev
 	 *
-	 * @param array $actions
+	 * @param array $actions actions.
 	 *
 	 * @return array
 	 */
@@ -194,15 +194,15 @@ final class Admin {
 	public function admin_view() {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			global $current_user;
-			$msg = "I'm sorry, " . $current_user->display_name . " I'm afraid I can't do that.";
-			echo '<div class="wrap">' . $msg . '</div>';
+			$msg = sprintf( __( "I'm sorry, %s. I'm afraid I can't do that." ), $current_user->display_name );
+			echo '<div class="wrap">' . esc_html( $msg ) . '</div>';
 
 			return false;
 		}
 		?>
 
 		<div class="wrap push7ssb-option">
-			<h1><?php _e( 'Push7 Subscribe Button Settings', 'simple-push-subscribe-button' ) ?></h1>
+			<h1><?php esc_html_e( 'Push7 Subscribe Button Settings', 'simple-push-subscribe-button' ) ?></h1>
 
 			<form method="post" action="options.php">
 				<?php
@@ -221,6 +221,9 @@ final class Admin {
 	}
 
 
+	/**
+	 * Render Appno section.
+	 */
 	public function render_appno() {
 		printf( '<input type="text" id="push7ssb_appno" class="regular-text" name="%s" value="%s"
 		       placeholder="%s" pattern="%s"
@@ -229,32 +232,41 @@ final class Admin {
 			esc_attr( get_option( \Push7_Subscribe_Button::PUSH7_APPNO_NAME, '0123456789ABCDEFGEHIJKLMNOPQRSTU' ) ),
 			\Push7_Subscribe_Button::APP_ID_PATTERN
 		);
-		printf( '<p class="description">%s</p>', __( 'Input if you want use subscribe button without Official Plugin, or another APPNO. <br>If, this value is empty, Official plugin setting will use for show button.', 'simple-push-subscribe-button' ) );
+		printf( '<p class="description">%s</p>', wp_kses( __( 'Input if you want use subscribe button without Official Plugin, or another APPNO. <br>If, this value is empty, Official plugin setting will use for show button.', 'simple-push-subscribe-button' ), array( 'br' => array() ) ) );
 	}
 
+	/**
+	 * Render whether enable social-buzz module
+	 */
 	public function render_is_enable_sbz() {
 		printf( '<input type="checkbox" id="push7ssb_enable_sbz" name="%s" value="on" %s ><label for="push7ssb_enable_sbz">%s</label>',
 			\Push7_Subscribe_Button::PLUGIN_OPTIONS . '[enable_social_buzz]',
 			checked( \Push7_Subscribe_Button_Options::get_options()->enable_social_buzz, true, false ),
-			__( 'Insert large Subscribe button bellow posts. (It likes Social Buzz)', 'simple-push-subscribe-button' )
+			esc_html__( 'Insert large Subscribe button bellow posts. (It likes Social Buzz)', 'simple-push-subscribe-button' )
 		);
-		printf( '<p class="description">%s</p>', __( 'It is look like SNS button of Viral Media. You can customize the following.', 'simple-push-subscribe-button' ) );
+		printf( '<p class="description">%s</p>', esc_html( 'It is look like SNS button of Viral Media. You can customize the following.', 'simple-push-subscribe-button' ) );
 
 	}
 
+	/**
+	 * Render to select social-buzz mode section
+	 */
 	public function render_sbz_mode() {
 		$current = \Push7_Subscribe_Button_Options::get_options()->social_buzz_mode;
 		echo '<select name="' . \Push7_Subscribe_Button::PLUGIN_OPTIONS . '[social_buzz_mode]" id="push7ssb_sbz_mode">';
 		foreach ( \Push7_Subscribe_Button::get_sbztypes() as $slug => $attrs ) {
 			printf( '<option value="%s" %s>%s</option>',
-				$slug,
+				esc_attr( $slug ),
 				selected( $slug, $current, false ),
-				$attrs['name']
+				esc_html( $attrs['name'] )
 			);
 		}
 		echo '</select>';
 	}
 
+	/**
+	 * Render what post type enabled social buzz module selection
+	 */
 	public function render_sbz_posttypes() {
 		$post_types = get_post_types( array( 'public' => true ), 'objects' );
 		$current    = \Push7_Subscribe_Button_Options::get_options()->social_buzz_posttype;
@@ -262,7 +274,7 @@ final class Admin {
 			printf( '<input type="checkbox" value="%1$s" name="%2$s" %5$s id="%3$s" /><label for="%3$s">%4$s</label><br/>',
 				$slug,
 				\Push7_Subscribe_Button::PLUGIN_OPTIONS . '[social_buzz_posttype][]',
-				'push7ssb_sbz_posttype_' . $slug,
+				'push7ssb_sbz_posttype_' . esc_attr( $slug ),
 				esc_attr( $obj->labels->name ),
 				checked( in_array( $slug, $current, true ), true, false )
 			);
@@ -270,6 +282,9 @@ final class Admin {
 
 	}
 
+	/**
+	 * Render Input the message for social-buzz module
+	 */
 	public function render_sbz_message() {
 		printf( '<input type="text" id="push7ssb_sbz_message" class="regular-text" name="%s" value="%s"
 		/>', \Push7_Subscribe_Button::PLUGIN_OPTIONS . '[social_buzz_message]', esc_attr( \Push7_Subscribe_Button_Options::get_options()->social_buzz_message ) );

@@ -35,7 +35,7 @@ class Push7SB_Jetpack {
 	 */
 	public static function init() {
 		if ( ! class_exists( 'Jetpack' ) or ! Jetpack::is_module_active( 'sharedaddy' ) ) {
-			return null; // end
+			return null; // End.
 		}
 
 
@@ -48,6 +48,7 @@ class Push7SB_Jetpack {
 
 	/**
 	 * Push7SB_Jetpack constructor.
+	 *
 	 * @since 0.0.1-dev
 	 */
 	private function __construct() {

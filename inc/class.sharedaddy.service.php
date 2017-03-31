@@ -64,7 +64,7 @@ class Share_Push7 extends Sharing_Source {
 	/**
 	 * Get Button for front
 	 *
-	 * @param $post WP_Post
+	 * @param WP_Post $post Post.
 	 * @since 0.0.1-dev
 	 *
 	 * @return string
@@ -94,6 +94,9 @@ class Share_Push7 extends Sharing_Source {
 		}
 	}
 
+	/**
+	 * The action do on header
+	 */
 	public function display_header() {
 		if ( ! $this->smart ) {
 			wp_enqueue_style( 'push7-custom-button' );
@@ -102,6 +105,7 @@ class Share_Push7 extends Sharing_Source {
 
 	/**
 	 * Footer action
+	 *
 	 * @since 0.0.1-dev
 	 */
 	public function display_footer() {
