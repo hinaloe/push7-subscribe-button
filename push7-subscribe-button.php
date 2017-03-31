@@ -78,8 +78,11 @@ class Push7_Subscribe_Button {
 	public function register_scripts() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		wp_register_script( 'push7-subscribe-button', 'https://push.app.push7.jp/static/button/p7.js', array(), false, true );
+		wp_register_script( 'push7-sdk', 'https://sdk.push7.jp/v2/p7sdk.js', array(), false, true );
 		wp_register_script( 'push7-custom-button', plugins_url( 'js/push7sb' . $suffix . '.js', __FILE__ ), array( 'jquery' ), false, true );
 		wp_register_style( 'push7-custom-button', plugins_url( 'css/front' . $suffix . '.css', __FILE__ ) );
+
+		$this->register_sdk_initializer( 'push7-sdk' );
 	}
 
 	/**
@@ -286,17 +289,35 @@ class Push7_Subscribe_Button {
 			case 'r':
 			case 'right':
 			case 'count':
-				return 'r';
+				return 'right';
 				break;
 			case 't':
+			case 'top':
 			case 'vertical':
 			case 'balloon':
-				return 't';
+				return 'top';
 				break;
 			default:
 				return 'n';
 		}
 
+	}
+
+	/**
+	 * @param string $handle script handle.
+	 * @return void
+	 */
+	private function register_sdk_initializer( $handle ) {
+		$option = Push7_Subscribe_Button_Options::get_options();
+		$appid  = self::get_appid_inc_official();
+		$param  = $option->enable_native_mode ? array(
+			'mode'      => 'native',
+			'subscribe' => 'auto',
+		) : array();
+
+		$script = 'p7.init("' . esc_js( $appid ) . '", ' . wp_json_encode( $param, JSON_FORCE_OBJECT ) . ');';
+
+		wp_add_inline_script( $handle, $script, 'after' );
 	}
 
 	/**
@@ -306,18 +327,20 @@ class Push7_Subscribe_Button {
 	 *
 	 * @param string $app_id
 	 * @param string $type
+	 * @param string $text
 	 *
 	 * @return string
 	 */
-	public static function get_official_button( $app_id, $type = '' ) {
+	public static function get_official_button( $app_id = '', $type = '', $text = '' ) {
 		/**
 		 * Filter Push7 Official button
 		 *
 		 * @param string $button button html to show
 		 * @param string $app_id AppId of Push7
 		 * @param string $type Button Type
+		 * @param string $text button text
 		 */
-		return apply_filters( 'push7_sb_official_button', sprintf( '<div class="p7-b" data-p7id="%s" data-p7c="%s"></div>', $app_id, self::format_official_button_type( $type ) ), $app_id, $type );
+		return apply_filters( 'push7_sb_official_button', sprintf( '<div class="p7button" data-button-text="%s" data-align="%s"></div>', esc_attr( $text ), self::format_official_button_type( $type ) ), $app_id, $type, $text );
 	}
 }
 

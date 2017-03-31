@@ -16,6 +16,18 @@ a.share-push7.share-icon.no-text::before {
   background: #EEAC00;
 }
 
+.p7button {
+  box-sizing: content-box;
+}
+
+.p7button * {
+  box-sizing: inherit;
+}
+
+.p7button .p7button-top, .p7button .p7button-right {
+  background: #fff;
+}
+
 #push7-sb-sbz {
   display: block;
 }

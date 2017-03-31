@@ -32,6 +32,7 @@ class SocialWithThumb extends Base {
 			wp_enqueue_style( 'push7-custom-button' );
 			wp_add_inline_style( 'push7-custom-button', $this->get_css() );
 			wp_enqueue_script( 'push7-subscribe-button' );
+			wp_enqueue_script( 'push7-sdk' );
 
 
 		}
