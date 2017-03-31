@@ -8,8 +8,8 @@ const
 	cssmin = require('gulp-cssmin'),
 	rename = require('gulp-rename'),
 	runSequence = require('run-sequence'),
-	spawn = require('child_process').spawn,
-	log = require('gulp-util').log
+	{spawn} = require('child_process'),
+	{log} = require('gulp-util')
 	;
 
 g.task('sass', ()=>
@@ -26,7 +26,7 @@ g.task('sass', ()=>
 g.task('ts', ()=> {
 	const p = tsc.createProject('tsconfig.json');
 	return p.src()
-		.pipe(tsc(p))
+		.pipe(p())
 		.js
 		.pipe(g.dest('./js'))
 		.pipe(uglify())

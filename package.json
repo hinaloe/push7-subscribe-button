@@ -6,15 +6,16 @@
   "devDependencies": {
     "del": "^2.2.0",
     "grunt": "^1.0.1",
-    "grunt-wp-i18n": "^0.5.0",
+    "grunt-wp-i18n": "^1.0.0",
     "grunt-wp-readme-to-markdown": "^2.0.1",
     "gulp": "^3.9.1",
     "gulp-cssmin": "^0.1.7",
-    "gulp-imagemin": "^3.0.3",
+    "gulp-imagemin": "^3.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
-    "gulp-typescript": "^2.11.0",
-    "gulp-uglify": "^1.5.2",
-    "run-sequence": "^1.1.5"
+    "gulp-sass": "^3.1.0",
+    "gulp-typescript": "^3.1.6",
+    "gulp-uglify": "^2.1.2",
+    "run-sequence": "^1.1.5",
+    "typescript": "^2.2.2"
   }
 }
