@@ -66,7 +66,8 @@ class SocialWithThumb extends Base {
 			$thumb = '';
 		}
 
-		return <<<EOI
+		return /** @lang CSS */
+			<<<EOI
 .push7-sb-sbz-with-thumb {
 	background-image: url({$thumb});
 }
