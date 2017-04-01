@@ -38,25 +38,25 @@ class Push7SBTest extends WP_UnitTestCase {
 		$method->setAccessible( true );
 		$this->assertSame( $method->invoke( null, '' ), 'n' );
 		$this->assertSame( $method->invoke( null, 'n' ), 'n' );
-		$this->assertSame( $method->invoke( null, 'r' ), 'r' );
-		$this->assertSame( $method->invoke( null, 'right' ), 'r' );
-		$this->assertSame( $method->invoke( null, 'count' ), 'r' );
-		$this->assertSame( $method->invoke( null, 't' ), 't' );
-		$this->assertSame( $method->invoke( null, 'vertical' ), 't' );
-		$this->assertSame( $method->invoke( null, 'balloon' ), 't' );
+		$this->assertSame( $method->invoke( null, 'r' ), 'right' );
+		$this->assertSame( $method->invoke( null, 'right' ), 'right' );
+		$this->assertSame( $method->invoke( null, 'count' ), 'right' );
+		$this->assertSame( $method->invoke( null, 'top' ), 'top' );
+		$this->assertSame( $method->invoke( null, 'vertical' ), 'top' );
+		$this->assertSame( $method->invoke( null, 'balloon' ), 'top' );
 
 
 	}
 
 	public function test_official_button() {
 		$this->assertSame( Push7_Subscribe_Button::get_official_button( Push7_Subscribe_Button::get_appid_inc_official() ),
-			'<div class="p7-b" data-p7id="' . self::OUR_APPID . '" data-p7c="n"></div>'
+			'<div class="p7button" data-button-text="" data-align="n"></div>'
 		);
 	}
 
 	public function test_shortcode() {
-		$this->assertSame( do_shortcode( '[push7-sb type=s]' ), '<div class="p7-b" data-p7id="' . self::OUR_APPID . '" data-p7c="n"></div>' );
-		$this->assertSame( do_shortcode( '[push7-sb id=shortappid type=balloon]' ), '<div class="p7-b" data-p7id="shortappid" data-p7c="t"></div>' );
+		$this->assertSame( do_shortcode( '[push7-sb type=s]' ), '<div class="p7button" data-button-text="" data-align="n"></div>' );
+		$this->assertSame( do_shortcode( '[push7-sb id=shortappid type=balloon]' ), '<div class="p7button" data-button-text="" data-align="top"></div>' );
 	}
 
 }
