@@ -86,6 +86,12 @@ final class Push7_Subscribe_Button_Options {
 
 
 	public function __get( $name ) {
+
+		$pre = apply_filters( "push7_sb_pre_option_${name}", false, $name );
+		if ( $pre !== false ) {
+			return $pre;
+		}
+
 		if ( property_exists( $this, $name ) ) {
 			return $this->$name;
 		}
