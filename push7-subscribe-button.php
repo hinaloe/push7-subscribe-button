@@ -66,6 +66,7 @@ class Push7_Subscribe_Button {
 		add_action( 'init', array( $this, 'register_shortcodes' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
 		add_action( 'init', array( $this, 'load_sbz' ) );
+		add_action( 'init', array( 'Push7SubscribeButtoon\Compat', 'init' ) );
 //		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 //		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
