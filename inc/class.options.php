@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @property-read string $social_buzz_mode Social Buzz Mode slug
  * @property-read string $social_buzz_message Message of Social-buzz
  * @property-read array $social_buzz_posttype posttype names for use social-buzz module
- * @property-read bool $enable_native_mode
+ * @property-read string|false $enable_native_mode
  *
  * @since 0.0.1-dev
  *
@@ -80,7 +80,7 @@ final class Push7_Subscribe_Button_Options {
 	/**
 	 * @since 2.0
 	 * @access private
-	 * @var bool
+	 * @var string|false
 	 */
 	private $enable_native_mode;
 

@@ -311,9 +311,10 @@ class Push7_Subscribe_Button {
 	private function register_sdk_initializer( $handle ) {
 		$option = Push7_Subscribe_Button_Options::get_options();
 		$appid  = self::get_appid_inc_official();
-		$param  = $option->enable_native_mode ? array(
+		$native = $option->enable_native_mode;
+		$param = $native ? array(
 			'mode'      => 'native',
-			'subscribe' => 'auto',
+			'subscribe' => is_string( $native ) ? $native : 'auto',
 		) : array();
 
 		$script = 'p7.init("' . esc_js( $appid ) . '", ' . wp_json_encode( $param, JSON_FORCE_OBJECT ) . ');';
