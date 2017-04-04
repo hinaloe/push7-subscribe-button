@@ -1,4 +1,3 @@
-/// <reference path="../../typings/browser.d.ts" />
 /**
  * Created by hina on 2016/02/13.
  */
@@ -6,8 +5,6 @@
 
 module p7sb {
 	"use strict";
-
-
 
 	/**
 	 * Push7 HEAD API Response
@@ -23,10 +20,42 @@ module p7sb {
 		error?: string // Known API Bug (2016.02.15)
 	}
 
+	export declare interface Push7_PostResponse {
+		success?: string
+	}
+
+	export declare interface Push7SDKOption {
+		lang?: string
+		mode?: "native" | string
+		/** auto: 自動購読(ボタンを必要としない), それ以外ならマニュアル */
+		subscribe?: "auto" | "manual" | string
+	}
+
+	/**
+	 * Push7 Official SDK interface
+	 */
+	export declare interface Push7SDK {
+		worker?: ServiceWorkerRegistration
+		subscription: null
+		isExpert: boolean
+		isEnterManifest: boolean
+		isReady: boolean
+		isRunningInit: boolean
+
+		ready(): Promise<this>
+		init(appno: string, options?: Push7SDKOption): Promise<this>
+		get_head(): Promise<Push7_HEAD>
+		get_params(): Promise<Object | null>
+		add_params(params: string[]): Promise<string[]>
+		remove_params(params: string[]): Promise<string[]>
+		subscribe(): Promise<Push7_PostResponse>
+		unsubscribe(): Promise<Push7_PostResponse>
+	}
+
 	/**
 	 * jQuery shortcut
 	 * @type {JQueryStatic}
-     */
+	 */
 	const $ = jQuery;
 	/**
 	 * self-update push7-jetpack-button count & url
